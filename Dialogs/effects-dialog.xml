@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<PropertyList>
+  <name>effectscontrol</name>
+  <layout>vbox</layout>
+
+  <text>
+    <label>Effects</label>
+    <valign>center</valign>
+    <halign>center</halign>
+  </text>
+
+  <hrule/>
+  
+  <!-- Grupo geral -->
+  <group>
+    <layout>hbox</layout>
+    <halign>center</halign>
+    <valign>top</valign>  
+    	   
+		    <checkbox>
+		      <halign>left</halign>
+		      <label>Engine smoke</label>
+		      <property>/sim/effects/engines/smoke</property>
+		      <binding>
+		        <command>property-toggle</command>
+		        <property>/sim/effects/engines/smoke</property>
+		      </binding>
+					    <binding>
+							<command>property-toggle</command>
+					      	<property>/sim/multiplay/generic/int[6]</property>
+					    </binding>
+					    <binding>
+					      	<command>property-assign</command>
+					      	<property>/sim/multiplay/generic/int[7]</property>
+					      	<value>0</value> 
+					    </binding>
+		      <binding>
+		        <command>property-toggle</command>
+		        <property>/sim/sound/switch</property>
+		      </binding>
+		    </checkbox>
+		    
+		    <checkbox>
+		      <halign>left</halign>
+		      <label>Tire smoke</label>
+		      <property>/sim/effects/gear/tiresmoke</property>
+		      <binding>
+		        <command>property-toggle</command>
+		        <property>/sim/effects/gear/tiresmoke</property>
+		      </binding>
+		      <binding>
+		        <command>property-toggle</command>
+		        <property>/sim/sound/switch</property>
+		      </binding>
+		    </checkbox>
+		    
+  </group>
+  
+  <hrule/>
+
+  <group>
+    <layout>hbox</layout>
+    <empty><stretch>true</stretch></empty>
+    <button>
+      <legend>Close</legend>
+      <default>true</default>
+      <key>Esc</key>
+      <binding>
+        <command>dialog-close</command>
+      </binding>
+    </button>
+    <empty><stretch>true</stretch></empty>
+  </group>
+
+</PropertyList>

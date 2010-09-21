@@ -1,0 +1,49 @@
+<!-- 
+ =========================================                                     
+  Prestes Hangar - 2009 - Embraer Project                                       
+ =========================================                                     
+       http://presteshangar.blogspot.com                                       
+                                                                               
+       Creation :   October 02, 2009 11:07:14 PM                               
+       Last update: October 05, 2009 03:14:24 PM                         
+ ======================================================================        
+ Contributions :                                                               
+      Isaas V. Prestes <isaias.prestes at gmail dot com >                      
+ ======================================================================        
+ Esta obra est licenciada sob uma Licena Creative Commons                      
+ Atribuio-Uso No-Comercial-Compartilhamento pela mesma Licena 3.0 Unported     
+ http://creativecommons.org/licenses/by-nc-sa/3.0/deed.pt                      
+                                                                               
+ This work is under Creative Commons License                                   
+ Attribution-Noncommercial-Share Alike 3.0 Unported                            
+ http://creativecommons.org/licenses/by-nc-sa/3.0/                             
+ ======================================================================        -->
+
+<PropertyList>
+
+	<!-- ######################################### -->
+	<!-- ### 3D MODEL  MODELO 3D             #### -->
+	<!-- ######################################### -->
+
+	<path>Embraer_195.ac</path>
+	<offsets>
+		<x-m> 0.0</x-m>             <!-- VRP at nose -->
+		<y-m> 0.0</y-m>             <!-- VRP at nose -->
+		<z-m> -4.6</z-m>           <!-- aligned by FDM gear, if model at the scale -->
+		<pitch-deg>0.0</pitch-deg>
+	</offsets>
+
+	<!-- ######################################### -->
+	<!-- ### ANIMATION  ANIMAES              #### -->
+	<!-- ######################################### -->
+
+	<!-- ######################################### -->
+	<!-- ### ILUMINATION  ILUMINAO           #### -->
+	<!-- ######################################### -->
+
+
+	<!-- ######################################### -->
+	<!-- ###                                  #### -->
+	<!-- ######################################### -->
+
+</PropertyList>

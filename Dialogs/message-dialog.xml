@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertyList>
+
+	<name>messagecontrol</name>
+	<layout>vbox</layout>
+
+
+
+	<text>
+		<label>Onboard Message</label>
+		<valign>center</valign>
+		<halign>center</halign>
+	</text>
+
+
+
+	<hrule/>
+
+	<!-- Grupo geral -->
+	<group>
+		<layout>hbox</layout>
+		<halign>center</halign>
+		<valign>top</valign>
+
+		<!-- Bloco Decolagem -->
+		<group>
+			<layout>vbox</layout>
+			<halign>left</halign>
+			<valign>top</valign>
+			<text>
+				<label>Partida</label>
+			</text>
+
+			<checkbox>
+				<halign>left</halign>
+				<label>Speech - Embarque</label>
+				<property>/controls/messages/embarque</property>
+				<binding>
+					<command>property-toggle</command>
+					<property>/controls/messages/embarque</property>
+				</binding>
+				<binding>
+					<command>property-toggle</command>
+					<property>/sim/sound/switch</property>
+				</binding>
+			</checkbox>
+
+			<checkbox>
+				<halign>left</halign>
+				<label>Speech  Equipamento Eletronico</label>
+				<property>/controls/messages/eqpeletr</property>
+				<binding>
+					<command>property-toggle</command>
+					<property>/controls/messages/eqpeletr</property>
+				</binding>
+				<binding>
+					<command>property-toggle</command>
+					<property>/sim/sound/switch</property>
+				</binding>
+			</checkbox>
+
+			<checkbox>
+				<halign>left</halign>
+				<label>Speech  Durante o embarque</label>
+				<property>/controls/messages/duremb</property>
+				<binding>
+					<command>property-toggle</command>
+					<property>/controls/messages/duremb</property>
+				</binding>
+				<binding>
+					<command>property-toggle</command>
+					<property>/sim/sound/switch</property>
+				</binding>
+			</checkbox>
+
+			<checkbox>
+				<halign>left</halign>
+				<label>Speech  Apos fechamento da porta principal</label>
+				<property>/controls/messages/fecharportas</property>
+				<binding>
+					<command>property-toggle</command>
+					<property>/controls/messages/fecharportas</property>
+				</binding>
+				<binding>
+					<command>property-toggle</command>
+					<property>/sim/sound/switch</property>
+				</binding>
+			</checkbox>
+			
+			<checkbox>
+				<halign>left</halign>
+				<label>Speech Chefe de Cabine</label>
+				<property>/controls/messages/instrsegur</property>
+				<binding>
+					<command>property-toggle</command>
+					<property>/controls/messages/fecharportas</property>
+				</binding>
+				<binding>
+					<command>property-toggle</command>
+					<property>/sim/sound/switch</property>
+				</binding>
+			</checkbox>
+			
+			<checkbox>
+				<halign>left</halign>
+				<label>Speech  Cmte - Decolagem Autorizada</label>
+				<property>/controls/messages/decauth</property>
+				<binding>
+					<command>property-toggle</command>
+					<property>/controls/messages/decauth</property>
+				</binding>
+				<binding>
+					<command>property-toggle</command>
+					<property>/sim/sound/switch</property>
+				</binding>
+			</checkbox>
+
+		</group>
+
+		<!-- Bloco No Ar -->
+		<group>
+			<layout>vbox</layout>
+			<halign>left</halign>
+			<valign>top</valign>
+
+			<text>
+				<label>No Ar</label>
+			</text>
+			
+			<checkbox>
+				<halign>left</halign>
+				<label>Speech Inicial do Cmte</label>
+				<property>/controls/messages/inicialcmte</property>
+				<binding>
+					<command>property-toggle</command>
+					<property>/controls/messages/inicialcmte</property>
+				</binding>
+				<binding>
+					<command>property-toggle</command>
+					<property>/sim/sound/switch</property>
+				</binding>
+			</checkbox>
+			
+			<checkbox>
+				<halign>left</halign>
+				<label>Speech Servico de bordo</label>
+				<property>/controls/messages/servicobordo</property>
+				<binding>
+					<command>property-toggle</command>
+					<property>/controls/messages/servicobordo</property>
+				</binding>
+				<binding>
+					<command>property-toggle</command>
+					<property>/sim/sound/switch</property>
+				</binding>
+			</checkbox>
+
+			<checkbox>
+				<halign>left</halign>
+				<label>Speech  Cmte - Turbulencia</label>
+				<property>/controls/messages/turb</property>
+				<binding>
+					<command>property-toggle</command>
+					<property>/controls/messages/turb</property>
+				</binding>
+				<binding>
+					<command>property-toggle</command>
+					<property>/sim/sound/switch</property>
+				</binding>
+			</checkbox>
+
+			<checkbox>
+				<halign>left</halign>
+				<label>Speech  Cmte - Problemas</label>
+				<property>/controls/messages/cmteprobl</property>
+				<binding>
+					<command>property-toggle</command>
+					<property>/controls/messages/cmteprobl</property>
+				</binding>
+				<binding>
+					<command>property-toggle</command>
+					<property>/sim/sound/switch</property>
+				</binding>
+			</checkbox>
+
+			<checkbox>
+				<halign>left</halign>
+				<label>Speech  Cmte - XXXX </label>
+				<property>/controls/messages/xxxxx</property>
+				<binding>
+					<command>property-toggle</command>
+					<property>/controls/messages/xxxxx</property>
+				</binding>
+				<binding>
+					<command>property-toggle</command>
+					<property>/sim/sound/switch</property>
+				</binding>
+			</checkbox>
+
+		</group>
+
+	</group>
+	
+	<!-- Grupo Geral 2 -->
+	<group>
+		<layout>hbox</layout>
+		<halign>center</halign>
+		<valign>top</valign>
+
+		<!-- Bloco Aterrissagem -->
+		<group>
+			<layout>vbox</layout>
+			<halign>left</halign>
+			<valign>top</valign>
+
+			<text>
+				<label>Chegada</label>
+			</text>
+
+			<checkbox>
+				<halign>left</halign>
+				<label>Speech  Cmte - Pouso </label>
+				<property>/controls/messages/cmtepousauth</property>
+				<binding>
+					<command>property-toggle</command>
+					<property>/controls/messages/cmtepousauth</property>
+				</binding>
+				<binding>
+					<command>property-toggle</command>
+					<property>/sim/sound/switch</property>
+				</binding>
+			</checkbox>
+
+			<checkbox>
+				<halign>left</halign>
+				<label>Speech  Cmte - Aguardar para pouso </label>
+				<property>/controls/messages/cmteaguardar</property>
+				<binding>
+					<command>property-toggle</command>
+					<property>/controls/messages/cmteaguardar</property>
+				</binding>
+				<binding>
+					<command>property-toggle</command>
+					<property>/sim/sound/switch</property>
+				</binding>
+			</checkbox>
+
+			<checkbox>
+				<halign>left</halign>
+				<label>Speech - Taxiamento apos o pouso</label>
+				<property>/controls/messages/taxiando</property>
+				<binding>
+					<command>property-toggle</command>
+					<property>/controls/messages/taxiando</property>
+				</binding>
+				<binding>
+					<command>property-toggle</command>
+					<property>/sim/sound/switch</property>
+				</binding>
+			</checkbox>
+
+		</group>
+
+		<!-- Outros -->
+		<group>
+			<layout>vbox</layout>
+			<halign>left</halign>
+			<valign>top</valign>
+
+			<text>
+				<label>Outros</label>
+			</text>
+
+			<checkbox>
+				<halign>left</halign>
+				<label>Afivelar cintos</label>
+				<property>/controls/switches/seatbelt-sign</property>
+				<binding>
+					<command>property-toggle</command>
+					<property>/controls/switches/seatbelt-sign</property>
+				</binding>
+				<binding>
+					<command>property-toggle</command>
+					<property>/controls/messages/fastenseatbelt</property>
+				</binding>
+				<binding>
+					<command>property-toggle</command>
+					<property>/sim/sound/switch</property>
+				</binding>
+			</checkbox>
+<!--			
+		<button>
+			<legend>Afivelar cintos</legend>
+			<default>true</default>
+				<binding>
+					<command>property-toggle</command>
+					<property>/controls/switches/seatbelt-sign</property>
+				</binding>
+				<binding>
+					<command>property-toggle</command>
+					<property>/controls/messages/fastenseatbelt</property>
+				</binding>
+				<binding>
+					<command>property-toggle</command>
+					<property>/sim/sound/switch</property>
+				</binding>
+		</button>
+-->
+		</group>
+
+	</group>	
+	
+
+	<hrule/>
+
+	<group>
+		<layout>hbox</layout>
+		<empty>
+			<stretch>true</stretch>
+		</empty>
+
+		<button>
+			<legend>Close</legend>
+			<default>true</default>
+			<key>Esc</key>
+			<binding>
+				<command>dialog-close</command>
+			</binding>
+		</button>
+
+		<empty>
+			<stretch>true</stretch>
+		</empty>
+
+	</group>
+
+</PropertyList>
+

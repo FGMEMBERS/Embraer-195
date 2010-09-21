@@ -1,0 +1,405 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+ <fx>
+  <!-- som do reverso interno -->
+  <engine>
+   <name>Left engine 1 reverse inside</name>
+   <path>Sounds/exhaust_loop.wav</path>
+   <mode>looped</mode>
+   <condition>
+    <or>
+     <property>/engines/engine/reverser-pos-norm</property>
+    </or>
+    <and>
+     <property>engines/engine[0]/running</property>
+    </and>
+   </condition>
+   <volume>
+    <property>/engines/engine[0]/thrust_lb</property>
+    <type>ln</type>
+    <factor>0.0050</factor>
+    <offset>0.05</offset>
+   </volume>
+   <pitch>
+    <offset>1.6</offset>
+   </pitch>
+  </engine>
+
+  <engine>
+   <name>Left engine 2 reverse inside</name>
+   <path>Sounds/exhaust_loop.wav</path>
+   <mode>looped</mode>
+   <condition>
+    <or>
+     <property>/engines/engine/reverser-pos-norm</property>
+    </or>
+    <and>
+     <property>engines/engine[1]/running</property>
+    </and>
+   </condition>
+   <volume>
+    <property>/engines/engine[1]/thrust_lb</property>
+    <type>ln</type>
+    <factor>0.0050</factor>
+    <offset>0.05</offset>
+   </volume>
+   <pitch>
+    <offset>1.6</offset>
+   </pitch>
+  </engine>
+
+  <!-- som do reverso interno -->
+
+  <!-- som do reverso fora da aeronave -->
+  <engine>
+   <name>Left engine 1 reverser outside</name>
+   <path>Sounds/exhaust_loop.wav</path>
+   <condition>
+    <greater-than>
+     <property>/engines/engine/reverser-pos-norm</property>
+     <value>0</value>
+    </greater-than>
+    <greater-than>
+     <property>/sim/current-view/view-number</property>
+     <value>0</value>
+    </greater-than>
+    <and>
+     <property>engines/engine[0]/running</property>
+    </and>
+   </condition>
+   <mode>looped</mode>
+   <volume>
+    <property>/engines/engine/reverser-pos-norm</property>
+    <factor>1.0</factor>
+   </volume>
+   <volume>
+    <property>sim/sound/Ovolume</property>
+   </volume>
+   <pitch>
+    <offset>1.6</offset>
+   </pitch>
+   <position>
+    <x>3.69645</x>
+    <y>4.77041</y>
+    <z>-1.30186</z>
+   </position>
+   <reference-dist>100.0</reference-dist>
+   <max-dist>500.0</max-dist>
+  </engine>
+
+  <engine>
+   <name>Left engine 2 reverser outside</name>
+   <path>Sounds/exhaust_loop.wav</path>
+   <condition>
+    <greater-than>
+     <property>/engines/engine/reverser-pos-norm</property>
+     <value>0</value>
+    </greater-than>
+    <greater-than>
+     <property>/sim/current-view/view-number</property>
+     <value>0</value>
+    </greater-than>
+    <and>
+     <property>engines/engine[1]/running</property>
+    </and>
+   </condition>
+   <mode>looped</mode>
+   <volume>
+    <property>/engines/engine/reverser-pos-norm</property>
+    <factor>1.0</factor>
+   </volume>
+   <volume>
+    <property>sim/sound/Ovolume</property>
+   </volume>
+   <pitch>
+    <offset>1.6</offset>
+   </pitch>
+   <position>
+    <x>3.69645</x>
+    <y>4.77041</y>
+    <z>-1.30186</z>
+   </position>
+   <reference-dist>100.0</reference-dist>
+   <max-dist>500.0</max-dist>
+  </engine>
+  <!-- som do reverso fora da aeronave -->
+
+
+
+<!-- O grito do motor -->
+  <engine>
+   <name>Engine 1</name>
+   <path>Sounds/jet.wav</path>
+   <mode>looped</mode>
+   <condition>
+     <property>/engines/engine[0]/running</property>
+   </condition>
+   <volume>
+    <property>/engines/engine[0]/thrust_lb[0]</property>
+    <type>ln</type>
+    <factor>0.10</factor>
+    <offset>0.05</offset>
+   </volume>
+  </engine>
+  
+  <engine>
+   <name>Engine 2</name>
+   <path>Sounds/jet.wav</path>
+   <mode>looped</mode>
+   <condition>
+     <property>/engines/engine[1]/running</property>
+   </condition>
+   <volume>
+    <property>/engines/engine[1]/thrust_lb[0]</property>
+    <type>ln</type>
+    <factor>0.10</factor>
+    <offset>0.05</offset>
+   </volume>
+  </engine>
+
+<!-- O grito do motor -->
+  <engine>
+   <name>Engine 1 whine</name>
+   <path>Sounds/whine.wav</path>
+   <mode>looped</mode>
+   <condition>
+     <property>/engines/engine[0]/running</property>
+   </condition>
+   <volume>
+    <property>/engines/engine[0]/thrust_lb[0]</property>
+    <type>ln</type>
+    <factor>0.10</factor>
+    <offset>0.1</offset>
+   </volume>
+   <pitch>
+    <property>/engines/engine[0]/thrust_lb[0]</property>
+    <type>log</type>
+    <factor>0.20</factor>
+    <offset>0.10</offset>
+   </pitch>
+  </engine>
+
+  <engine>
+   <name>Engine 2 whine</name>
+   <path>Sounds/whine.wav</path>
+   <mode>looped</mode>
+   <condition>
+     <property>/engines/engine[1]/running</property>
+   </condition>
+   <volume>
+    <property>/engines/engine[1]/thrust_lb[0]</property>
+    <type>ln</type>
+    <factor>0.10</factor>
+    <offset>0.1</offset>
+   </volume>
+   <pitch>
+    <property>/engines/engine[1]/thrust_lb[0]</property>
+    <type>log</type>
+    <factor>0.20</factor>
+    <offset>0.10</offset>
+   </pitch>
+  </engine>
+<!-- END O grito do motor -->
+  
+<!-- Desligando a turbina -->
+  <engine>
+   <name>Engine 1 shutdown</name>
+   <path>Sounds/turbine_shutdown.wav</path>
+   <condition>
+    <and>
+    <equals>
+     <property>/engines/engine[0]/starter</property>
+     <value>0</value>
+    </equals>
+    </and>
+    <and>
+    <equals>
+     <property>/engines/engine[0]/cutoff</property>
+     <value>1</value>
+    </equals>
+    </and>
+   </condition>
+  </engine>
+
+  <engine>
+   <name>Engine 2 shutdown</name>
+   <path>Sounds/turbine_shutdown.wav</path>
+   <condition>
+    <and>
+    <equals>
+     <property>/engines/engine[1]/starter</property>
+     <value>0</value>
+    </equals>
+    </and>
+    <and>
+    <equals>
+     <property>/engines/engine[1]/cutoff</property>
+     <value>1</value>
+    </equals>
+    </and>
+   </condition>
+  </engine>
+
+<!-- END Desligando a turbina -->
+
+<!-- Ligando a turbina -->
+  <engine>
+   <name>Engine 1 startup</name>
+   <path>Sounds/turbine_start.wav</path>
+   <condition>
+    <and>
+    <equals>
+     <property>/engines/engine[0]/starter</property>
+     <value>1</value>
+    </equals>
+    </and>
+    <and>
+    <equals>
+     <property>/engines/engine[0]/cutoff</property>
+     <value>0</value>
+    </equals>
+    </and>  
+   </condition>
+  </engine>
+  <engine>
+   <name>Engine 2 startup</name>
+   <path>Sounds/turbine_start.wav</path>
+   <condition>
+    <and>
+    <equals>
+     <property>/engines/engine[1]/starter</property>
+     <value>1</value>
+    </equals>
+    </and>
+    <and>
+    <equals>
+     <property>/engines/engine[1]/cutoff</property>
+     <value>0</value>
+    </equals>
+    </and>  
+   </condition>
+  </engine>
+
+<!-- END Ligando a turbina -->
+
+
+  <rumble>
+   <name>rumble</name>
+   <mode>looped</mode>
+   <path>Sounds/rumble.wav</path>
+   <condition>
+    <or>
+     <property>/gear/gear[0]/wow</property>
+     <property>/gear/gear[1]/wow</property>
+     <property>/gear/gear[2]/wow</property>
+    </or>
+   </condition>
+   <volume>
+    <property>/velocities/airspeed-kt</property>
+    <type>log</type>
+    <factor>0.5</factor>
+   </volume>
+  </rumble>
+
+  <gear>
+   <name>gear</name>
+   <mode>in-transit</mode>
+   <path>Sounds/gear.wav</path>
+   <property>/gear/gear[0]/position-norm</property>
+   <pitch>
+    <internal>dt_play</internal>
+    <offset>1.0</offset>
+    <factor>-0.001</factor>
+   </pitch>
+  </gear>
+
+  <gear>
+   <name>gear-lock</name>
+   <path>Sounds/gear-lck.wav</path>
+   <condition>
+    <equals>
+     <property>/gear/gear[0]/position-norm</property>
+     <value>0</value>
+    </equals>
+   </condition>
+  </gear>
+
+  <squeal>
+   <name>squeal</name>
+   <path>Sounds/squeal.wav</path>
+   <condition>
+    <or>
+     <property>/gear/gear[0]/wow</property>
+     <property>/gear/gear[1]/wow</property>
+     <property>/gear/gear[2]/wow</property>
+    </or>
+   </condition>
+   <volume>
+    <property>/velocities/speed-down-fps</property>
+    <factor>0.05</factor>
+   </volume>
+   <volume>
+    <property>/velocities/airspeed-kt</property>
+    <factor>0.01</factor>
+   </volume>
+   <volume>
+    <internal>dt_stop</internal>
+    <factor>0.05</factor>
+    <max>1.0</max>
+   </volume>
+   <pitch>
+    <property>/velocities/airspeed-kt</property>
+    <factor>0.0025</factor>
+    <offset>1.2</offset>
+   </pitch>
+  </squeal>
+
+  <flap>
+   <name>flaps</name>
+   <mode>in-transit</mode>
+   <path>Sounds/flaps.wav</path>
+   <property>/surface-positions/flap-pos-norm</property>
+   <volume>
+    <factor>0.45</factor>
+   </volume>
+  </flap>
+
+  <wind>
+   <name>wind</name>
+   <mode>looped</mode>
+   <path>Sounds/wind.wav</path>
+   <property>/velocities/airspeed-kt</property>
+   <volume>
+    <property>/position/altitude-ft</property>
+    <factor>-0.000015</factor>
+    <offset>1.0</offset>
+    <min>0.1</min>
+    <max>1.0</max>
+   </volume>
+   <volume>
+    <property>/velocities/airspeed-kt</property>
+    <factor>0.0015</factor>
+    <min>0.03</min>
+    <max>0.25</max>
+   </volume>
+   <pitch>
+    <property>/velocities/airspeed-kt</property>
+    <factor>0.01</factor>
+    <offset>1.25</offset>
+   </pitch>
+  </wind>
+
+  <stall>
+   <name>stall</name>
+   <path>Sounds/stall.wav</path>
+   <property>/sim/alarms/stall-warning</property>
+   <volume>
+    <property>/velocities/airspeed-kt</property>
+    <min>30.0</min>
+   </volume>
+  </stall>
+
+ </fx>
+
+</PropertyList>
