@@ -12,14 +12,6 @@
  Contributions :                                                               
       Isaas V. Prestes <isaias.prestes at gmail dot com >                     
  ======================================================================        
- Esta obra est licenciada sob uma Licena Creative Commons                    
- Atribuio-Uso No-Comercial-Compartilhamento pela mesma Licena 3.0 Unported 
- http://creativecommons.org/licenses/by-nc-sa/3.0/deed.pt                      
-                                                                               
- This work is under Creative Commons License                                   
- Attribution-Noncommercial-Share Alike 3.0 Unported                            
- http://creativecommons.org/licenses/by-nc-sa/3.0/                             
- ======================================================================        
  -->
 	<sim>
 		<description>Embraer 195</description>
@@ -47,9 +39,13 @@
 			</livery>
 			<miscelania>
 				<file type="string">Default</file>
-			</miscelania>	
+			</miscelania>
+			
 		</model>
 
+		<!-- Distancia padrao da vista para o aviao (metros) -->
+		<chase-distance-m>-65</chase-distance-m>
+		
 		<!-- Vises da aeronave -->
 		<view n="0">
 			<name>Pilot View</name>
@@ -76,6 +72,7 @@
 			</config>
 		</view>
 		<view n="1">
+			<internal type="bool">false</internal>
 			<config>
 				<!-- Vista externa, pode dar um giro no entorno da aeronave -->
 				<name>Outside View</name>
@@ -83,6 +80,7 @@
 			</config>
 		</view>
 		<view n="2">
+			<internal type="bool">false</internal>
 			<name>Good runway angle</name>
 			<config>
 				<z-offset-m type="double" archive="y">-80.0</z-offset-m>
@@ -91,9 +89,9 @@
 		</view>
 
 		<view n="1500">
+			<internal type="bool">true</internal>
 		    <name>Left Wing</name>
 		    <type>lookfrom</type>
-		    <internal archive="y">true</internal>
 		    <config>
 		      <from-model type="bool">true</from-model>
 		      <from-model-idx type="int">0</from-model-idx>
@@ -109,7 +107,7 @@
 		<view n="1501">
 		    <name>Right Turbofan</name>
 		    <type>lookfrom</type>
-		    <internal archive="y">true</internal>
+			<internal type="bool">true</internal>
 		    <config>
 			      <from-model type="bool">true</from-model>
 			      <from-model-idx type="int">0</from-model-idx>
@@ -125,7 +123,7 @@
 		<view n="1502">
 			<name>Copilot</name>
 			<type>lookfrom</type>
-			<internal archive="y">true</internal>
+			<internal type="bool">true</internal>
 			<config>
 				<from-model type="bool">true</from-model>
 				<from-model-idx type="int">0</from-model-idx>
@@ -139,11 +137,6 @@
 				<pitch-offset-deg archive="y">-10.0</pitch-offset-deg>
 			</config>
 		</view>
-		
-		<!-- Distancia padrao da vista para o aviao (metros) -->
-		<chase-distance-m>-65</chase-distance-m>
-
-
 
 		<!-- O que faz isso? Recolhe o cara alguns metros na pista de decolagem? -->
 		<airport>
@@ -231,12 +224,6 @@
 		<hud>
 			<enable3d>true</enable3d>
 		</hud>
-
-
-		<!-- Descobrir para que serve isso... -->
-		<virtual-cockpit archive="y">true</virtual-cockpit>
-		<allow-toggle-cockpit>true</allow-toggle-cockpit>
-
 
 		<!-- Painel de Ajuda durante o jogo -->
 		<help>
@@ -360,8 +347,6 @@
 							<script>groundservice.serviceonoff()</script>
 						</binding>
 					</item>
-
-					
 					<!--Ground proximity warning system (GPWS)-->
 					<item>
 						<label>Ground proximity warning system (GPWS)</label>
@@ -370,25 +355,11 @@
 							<property>instrumentation/mk-viii/servicable</property>
 						</binding>
 					</item>
-					
-					<!-- Dialogo do Pushback -->
-				   <item>
-					    <label>Pushback</label>
-					    <name>pushback</name>
-					    <binding>
-						     <command>dialog-show</command>
-						     <dialog-name>pushback</dialog-name>
-					    </binding>
-				   </item>
-				   
 				</menu>
 			</default>
 		</menubar>
 
 	</sim><!-- FIM DA SECAO SIM -->
-
-	<!-- Engines using thrust reversal. http://wiki.flightgear.org/index.php/Howto:_Add_thrust_reversal -->
-	<!-- Prestes Hangar code - SET-2009 -->
 	
 	<!-- Definicoes para o estado dos motores e seus reversores de empuxo -->
 	<engines>
@@ -400,16 +371,6 @@
 			<running>true</running>
 			<reverser-position type="double">0.000000</reverser-position>
 		</engine>
-		<!--
-		<engine n="2">
-			<running>true</running>
-			<reverser-position type="double">0.000000</reverser-position>
-		</engine>
-		<engine n="3">
-			<running>true</running>
-			<reverser-position type="double">0.000000</reverser-position>
-		</engine>
-		-->
 	</engines>
 
 	<!-- Engines using thrust reversal keyboard. http://wiki.flightgear.org/index.php/Howto:_Add_thrust_reversal -->

@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+ <path>taxilight.ac</path>
+
+ <animation>
+  <type>noshadow</type>
+  <object-name>whitelighttaxi</object-name>
+ </animation>
+
+ <animation>
+  <type>billboard</type>
+  <spherical>true</spherical>
+ </animation>
+
+ <animation>
+  <type>select</type>
+  <object-name>whitelighttaxi</object-name>
+  <condition>
+   <and>
+    <property>controls/switches/taxi-lights</property>
+   <greater-than>
+    <property>gear/gear/position-norm</property>
+    <value>0.05</value>
+   </greater-than>
+   </and>
+  </condition>
+ </animation>
+
+ <animation>
+  <type>dist-scale</type>
+  <object-name>whitelighttaxi</object-name>
+  <interpolation>
+   <entry><ind>0</ind><dep>1.0</dep></entry>
+   <entry><ind>500</ind><dep>2.0</dep></entry>
+   <entry><ind>16000</ind><dep>16.0</dep></entry>
+  </interpolation>
+ </animation>
+
+</PropertyList>

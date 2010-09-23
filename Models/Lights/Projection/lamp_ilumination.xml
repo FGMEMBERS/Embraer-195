@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+  <path>lamp_ilumination.ac</path>
+  
+<animation>
+		<type>material</type>
+		<object-name>lightcone</object-name>
+		<transparency>
+			<alpha-prop>environment/visibility-m</alpha-prop>
+			<factor>1</factor>
+			<offset>0</offset>
+			</transparency>
+		<threshold>0.001</threshold>
+	</animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>lightcone</object-name>
+    <object-name>groundlight</object-name>
+    <enable-hot type="bool">false</enable-hot>
+    <condition>
+        <greater-than>
+          <property>/sim/time/sun-angle-rad</property>
+          <value>1.57</value>
+        </greater-than>
+    </condition>
+  </animation>
+  
+ <animation>
+  <type>select</type>
+  <object-name>lightcone</object-name>
+  <condition>
+   <and>
+    <property>controls/switches/taxi-lights</property>
+   <greater-than>
+    <property>gear/gear/position-norm</property>
+    <value>0.05</value>
+   </greater-than>
+   </and>
+  </condition>
+ </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>lightcone</object-name>
+  </animation>
+
+   
+</PropertyList>
+

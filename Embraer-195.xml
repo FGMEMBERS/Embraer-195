@@ -58,16 +58,6 @@
      Contributions :                                                               
           Isaas V. Prestes <isaias.prestes at gmail dot com >                     
      ======================================================================        
-     Esta obra est licenciada sob uma Licena Creative Commons                    
-     Atribuio-Uso No-Comercial-Compartilhamento pela mesma Licena 3.0 Unported 
-     http://creativecommons.org/licenses/by-nc-sa/3.0/deed.pt                      
-                                                                                   
-     This work is under Creative Commons License                                   
-     Attribution-Noncommercial-Share Alike 3.0 Unported                            
-     http://creativecommons.org/licenses/by-nc-sa/3.0/                             
-     ======================================================================        
-	
-
   -->
 
   <metrics>
@@ -266,7 +256,6 @@
  <system file="Embraer195-NWS"/>
  <system file="Embraer195-crash-detect"/>
  <system file="Embraer195-particles"/>
- 
 
   <flight_control name="FCS: Embraer-195">
 
@@ -868,4 +857,20 @@
 
   </aerodynamics>
 
+<external_reactions>
+	 <force name="pushback" frame="BODY">
+      <location unit="IN">
+        <x> 197.82 </x>
+        <y>   0.00 </y>
+        <z> -182.61 </z>
+      </location>
+	  <direction>
+	   <x>1</x>
+	   <y>0</y>
+	   <z>0</z>
+	  </direction>
+	 </force>
+</external_reactions>
+
+  
 </fdm_config>

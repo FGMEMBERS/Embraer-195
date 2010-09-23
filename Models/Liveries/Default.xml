@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+<sim>
+    <model>
+			<livery>
+				<name type="string">Default</name>
+				<texture>O_NOME_DO_AVIAO.png</texture>
+			</livery>
+			<miscelania>
+				<name type="string">Default</name>
+				<texture>O_NOME_DO_AVIAOmisc.png</texture>
+			</miscelania>
+			<!--
+			<wings>
+				<name type="string">Default</name>
+				<texture>O_NOME_DO_AVIAOwings.png</texture>
+			</wings>        
+			<logolight>
+				<name type="string">Default</name>
+				<texture>O_NOME_DO_AVIAOnight.png</texture>
+			</logolight>
+			-->
+    </model>
+</sim>
+</PropertyList>
