@@ -1,0 +1,689 @@
+<?xml version="1.0"?>
+<PropertyList>
+<!-- 
+ =========================================                                     
+  Prestes Hangar - 2009 - Embraer Project                                       
+ =========================================                                     
+       http://presteshangar.blogspot.com                                       
+                                                                               
+       Creation :   September 12, 2009 01:00:24 AM                             
+       Last update: October 02, 2009 11:19:32 PM                               
+ ======================================================================        
+ Contributions :                                                               
+      Isaas V. Prestes <isaias.prestes at gmail dot com >                     
+ ======================================================================        
+ -->
+	<sim>
+		<description>Embraer E-Jet 195 LR</description>
+		<aircraft-version>20101107</aircraft-version>
+		<status>alpha</status>
+		<author>Isaias V. Prestes</author>
+		<flight-model>yasim</flight-model>
+        <fuel-fraction>0.50</fuel-fraction>
+		<aero>E195LR</aero>
+		
+		<!-- Definicoes para splash screen -->
+		<startup>
+			<splash-texture>Aircraft/Embraer-195/splash.png</splash-texture>
+		</startup>
+
+		<!-- Definição do Painel 2D da Aeronave -->
+		<panel>
+			<path>Aircraft/737-300/Panels/737-ifr-panel.xml</path>
+			<visibility>true</visibility>
+		</panel>
+		
+		<model>
+			<path>Aircraft/Embraer-195/Models/E195LR.xml</path>
+			<livery>
+				<file type="string">Default</file>
+			</livery>
+			<miscelania>
+				<file type="string">Default</file>
+			</miscelania>
+			
+		</model>
+
+		<!-- Distancia padrao da vista para o aviao (metros) -->
+		<chase-distance-m>-65</chase-distance-m>
+		
+		<!-- Vises da aeronave -->
+		<view n="0">
+			<name>Pilot View</name>
+			<type>lookfrom</type>
+			<internal type="bool">true</internal>
+			<config>
+				<x-offset-m type="double">-0.419403</x-offset-m>
+				<y-offset-m type="double">1.00871</y-offset-m>
+				<z-offset-m type="double">-14.5541</z-offset-m>
+				<pitch-offset-deg>-5.5</pitch-offset-deg>
+				<limits>
+					<enabled type="bool">true</enabled>
+					<left>
+						<heading-max-deg type="double">140</heading-max-deg>
+						<x-offset-max-m type="double">0.35</x-offset-max-m>
+						<x-offset-threshold-deg type="double">65</x-offset-threshold-deg>
+					</left>
+					<right>
+						<heading-max-deg type="double">160</heading-max-deg>
+						<x-offset-max-m type="double">0.25</x-offset-max-m>
+						<x-offset-threshold-deg type="double">65</x-offset-threshold-deg>
+					</right>
+				</limits>
+			</config>
+		</view>
+		<view n="1">
+			<internal type="bool">false</internal>
+			<config>
+				<!-- Vista externa, pode dar um giro no entorno da aeronave -->
+				<name>Outside View</name>
+				<z-offset-m type="double" archive="y">-55.0</z-offset-m>
+			</config>
+		</view>
+		<view n="2">
+			<internal type="bool">false</internal>
+			<name>Good runway angle</name>
+			<config>
+				<z-offset-m type="double" archive="y">-80.0</z-offset-m>
+				<pitch-offset-deg archive="y"> 12.0</pitch-offset-deg>
+			</config>
+		</view>
+
+		<view n="1500">
+			<internal type="bool">true</internal>
+		    <name>Left Wing</name>
+		    <type>lookfrom</type>
+		    <config>
+		      <from-model type="bool">true</from-model>
+		      <from-model-idx type="int">0</from-model-idx>
+		      <ground-level-nearplane-m type="double">0.01f</ground-level-nearplane-m>
+		      <default-field-of-view-deg type="double">55</default-field-of-view-deg>
+		      <pitch-offset-deg>-8.0</pitch-offset-deg>
+		      <heading-offset-deg type="double">90</heading-offset-deg> <!-- parallel to the panel -->
+		      <x-offset-m archive="y"> -1.9 </x-offset-m> <!--Left/Right -->
+		      <y-offset-m archive="y"> 0.30 </y-offset-m> <!--Up/Down -->
+		      <z-offset-m archive="y"> 2.00 </z-offset-m> <!--Fdw/Back -->
+		    </config>
+	    </view>
+		<view n="1501">
+		    <name>Right Turbofan</name>
+		    <type>lookfrom</type>
+			<internal type="bool">true</internal>
+		    <config>
+			      <from-model type="bool">true</from-model>
+			      <from-model-idx type="int">0</from-model-idx>
+			      <ground-level-nearplane-m type="double">0.01f</ground-level-nearplane-m>
+			      <default-field-of-view-deg type="double">45</default-field-of-view-deg>
+			      <pitch-offset-deg>-8.0</pitch-offset-deg>
+			      <heading-offset-deg type="double">225</heading-offset-deg> <!-- parallel to the panel -->
+			      <x-offset-m archive="y"> -1.84488 </x-offset-m> <!--Left/Right -->
+			      <y-offset-m archive="y"> 0.752537 </y-offset-m> <!--Up/Down -->
+			      <z-offset-m archive="y"> -5.96437 </z-offset-m> <!--Fdw/Back -->
+		    </config>
+	    </view>
+		<view n="1502">
+		    <name>Landing Gear</name>
+		    <type>lookfrom</type>
+			<internal type="bool">true</internal>
+		    <config>
+			      <from-model type="bool">true</from-model>
+			      <from-model-idx type="int">0</from-model-idx>
+			      <ground-level-nearplane-m type="double">0.01f</ground-level-nearplane-m>
+			      <default-field-of-view-deg type="double">45</default-field-of-view-deg>
+			      <pitch-offset-deg>-8.0</pitch-offset-deg>
+			      <heading-offset-deg type="double">0.0</heading-offset-deg> <!-- parallel to the panel -->
+			      <x-offset-m archive="y"> 0.0 </x-offset-m> <!--Left/Right -->
+			      <y-offset-m archive="y"> -3.15678 </y-offset-m> <!--Up/Down -->
+			      <z-offset-m archive="y"> 6.01224 </z-offset-m> <!--Fdw/Back -->
+		    </config>
+	    </view>
+
+		<view n="1503">
+			<name>Copilot</name>
+			<type>lookfrom</type>
+			<internal type="bool">true</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<from-model-idx type="int">0</from-model-idx>
+				<ground-level-nearplane-m type="double">0.01f</ground-level-nearplane-m>
+				<default-field-of-view-deg type="double">55</default-field-of-view-deg>
+				<heading-offset-deg type="double">0</heading-offset-deg>
+				<!-- x/y/z == right/up/back -->
+				<x-offset-m type="double">0.419403</x-offset-m>
+				<y-offset-m type="double">1.00871</y-offset-m>
+				<z-offset-m type="double">-14.5541</z-offset-m>
+				<pitch-offset-deg archive="y">-10.0</pitch-offset-deg>
+			</config>
+		</view>
+
+		<!-- O que faz isso? Recolhe o cara alguns metros na pista de decolagem? -->
+		<airport>
+			<runways>
+				<start-offset-m>50</start-offset-m>
+			</runways>
+		</airport>
+
+
+		<!-- Ajuste de Flaps -->
+		<flaps>
+			<setting>0.000</setting>
+			<!-- flaps up -->
+			<setting>0.033</setting>
+			<!-- flaps 1  -->
+			<setting>0.166</setting>
+			<!-- flaps 5  -->
+			<setting>0.500</setting>
+			<!-- flaps 15 -->
+			<setting>0.666</setting>
+			<!-- flaps 20 -->
+			<setting>0.833</setting>
+			<!-- flaps 25 -->
+			<setting>1.000</setting>
+			<!-- flaps 30 -->
+		</flaps>
+		
+	    <multiplay>
+	      <chat_display>1</chat_display>
+	      <generic> 
+	        <int type="int">0</int>  <!-- 0 immat -->
+	        <int type="int">0</int>  <!-- 1 immat -->
+	        <int type="int">0</int>  <!-- 2 immat -->
+	        <int type="int">0</int>  <!-- 3 immat -->
+	        <int type="int">0</int>  <!-- 4 immat -->
+	        <int type="int">0</int>  <!-- 5 immat -->
+	        <int type="bool">0</int> <!-- 6 smoke --> <!-- controls engines Smoke -->
+	        <int type="int">0</int>  <!-- 7 color --> <!-- controls engines Smoke -->
+	      </generic>
+	    </multiplay> 
+
+		<!-- Controle dos efeitos exibidos -->
+		<effects>
+			<engines>
+				<smoke type="bool">0</smoke>
+			</engines>
+			<gear>
+				<tiresmoke type="bool">0</tiresmoke>
+			</gear>
+		</effects>
+
+		  <submodels> 
+		    <serviceable type="bool">true</serviceable>
+		    <path>Aircraft/Embraer-195/submodels.xml</path>
+		  </submodels>	     
+	    
+		<!-- Sistemas da Aeronave -->
+		<systems>
+			<!-- Sistema eltrico -->
+			<electrical>
+				<path>Aircraft/Embraer-195/Systems/Embraer195-electrical.xml</path>
+			</electrical>
+			<!-- Piloto automtico -->
+			<autopilot>
+				<path>Aircraft/Embraer-195/Systems/Embraer195-autopilot.xml</path>
+			</autopilot>
+			<!-- Outros sistemas -->
+			<system>
+				<path>Aircraft/Generic/generic-systems.xml</path>
+			</system>
+		</systems>
+
+		<!-- Instrumentos -->
+		<instrumentation>
+			<path>Aircraft/Embraer-195/Systems/Embraer195-instrumentation.xml</path>
+		</instrumentation>
+
+		<!-- Sistema de som, configuraes de audio da aeronave -->
+		<sound>
+			<path>Aircraft/Embraer-195/Sounds/Embraer_E-Jets_Family-sound.xml</path>
+			<switch type="bool">0</switch>
+		</sound>
+
+		<!-- Definicoes para o HUD -->
+		<hud>
+			<enable3d>true</enable3d>
+		</hud>
+
+		<!-- Painel de Ajuda durante o jogo -->
+		<help>
+			<title>Embraer-195</title>
+			<line>Important keys</line>
+			<key>
+				<name>l</name>
+				<desc>Brings up the Livery Switching Dialog</desc>
+			</key>
+			<key>
+				<name>Del</name>
+				<desc>Toggle Reversers</desc>
+			</key>
+			<key>
+				<name>Ctrl+B</name>
+				<desc>Toggle SpeedBrake</desc>
+			</key>
+		   <key>
+			    <name>b </name>
+			    <desc>Brakes</desc>
+		   </key>
+		   <key>
+			    <name>Shift+b </name>
+			    <desc>Parking brakes</desc>
+		   </key>
+		</help>
+
+		<!-- Pesos -->
+		<!-- H um cdigo esperando para ser adicionado -->
+
+		<!-- Menu do Embraer 195 -->
+		<menubar>
+			<default>
+				<menu n="100">
+					<label>Embraer 195</label>
+					<enabled type="bool">true</enabled>
+
+					<item>
+						<label>Select Livery</label>
+						<binding>
+							<command>nasal</command>
+							<script>aircraft.livery.dialog.open()</script>
+						</binding>
+					</item>
+
+					<item>
+						<label>Lights</label>
+						<binding>
+							<command>nasal</command>
+							<script>
+							  var dlg = gui.Dialog.new("/sim/gui/dialogs/lights-config/dialog", "Aircraft/Embraer-195/Dialogs/lights-dialog.xml");
+				       </script>
+						</binding>
+						<binding>
+							<command>dialog-show</command>
+							<dialog-name>lightcontrol</dialog-name>
+						</binding>
+					</item>
+					<item>
+						<label>Engines</label>
+						<binding>
+							<command>nasal</command>
+							<script>
+							  var dlg = gui.Dialog.new("/sim/gui/dialogs/engines-config/dialog", "Aircraft/Embraer-195/Dialogs/engines-dialog.xml");
+				       </script>
+						</binding>
+						<binding>
+							<command>dialog-show</command>
+							<dialog-name>enginecontrol</dialog-name>
+						</binding>
+					</item>
+					<item>
+						<label>Message system</label>
+						<binding>
+							<command>nasal</command>
+							<script>
+							  var dlg = gui.Dialog.new("/sim/gui/dialogs/message-config/dialog", "Aircraft/Embraer-195/Dialogs/message-dialog.xml");
+				       </script>
+						</binding>
+						<binding>
+							<command>dialog-show</command>
+							<dialog-name>messagecontrol</dialog-name>
+						</binding>
+					</item>
+					<item>
+						<label>Effects</label>
+						<binding>
+							<command>nasal</command>
+							<script>
+							  var dlg = gui.Dialog.new("/sim/gui/dialogs/effects-config/dialog", "Aircraft/Embraer-195/Dialogs/effects-dialog.xml");
+				       </script>
+						</binding>
+						<binding>
+							<command>dialog-show</command>
+							<dialog-name>effectscontrol</dialog-name>
+						</binding>
+					</item>
+					<item>
+						<label>Pushback</label>
+						<binding>
+							<command>nasal</command>
+							<script>
+							  var dlg = gui.Dialog.new("/sim/gui/dialogs/pushback-config/dialog", "Aircraft/Embraer-195/Dialogs/pushback.xml");
+				       </script>
+						</binding>
+						<binding>
+							<command>dialog-show</command>
+							<dialog-name>pushback</dialog-name>
+						</binding>
+					</item>
+					<item>
+						<label>Ground Service - Cargo</label>
+						<binding>
+							<command>nasal</command>
+							<script>groundservice.servicecargoonoff()</script>
+						</binding>
+					</item>
+
+					<item>
+						<label>Ground Service - Pax</label>
+						<binding>
+							<command>nasal</command>
+							<script>groundservice.servicepaxonoff()</script>
+						</binding>
+					</item>
+					<!--Ground proximity warning system (GPWS)-->
+					<item>
+						<label>Ground proximity warning system (GPWS)</label>
+						<binding>
+							<command>property-toggle</command>
+							<property>instrumentation/mk-viii/servicable</property>
+						</binding>
+					</item>
+					
+					<item>
+						<label>Yoke On/Off</label>
+						<binding>
+							<command>property-toggle</command>
+							<property>/sim/yoke-visible</property>
+						</binding>
+					</item>
+					
+                    <item>
+                        <label>Autostart</label>
+                        <binding>
+                            <command>property-toggle</command>
+                            <property>sim/model/start-idling</property>
+                        </binding>
+                    </item>
+				</menu>
+			</default>
+		</menubar>
+
+	</sim><!-- FIM DA SECAO SIM -->
+
+	<!-- Engines using thrust reversal keyboard. http://wiki.flightgear.org/index.php/Howto:_Add_thrust_reversal -->
+	<input>
+		<keyboard>
+            <key n="127">
+                <name>Delete</name>
+                <desc>Toggle Reversers</desc>
+                <binding>
+                    <command>property-toggle</command>
+                    <property>controls/engines/engine[0]/reverser</property>
+                </binding>
+                <binding>
+                    <command>property-toggle</command>
+                    <property>controls/engines/engine[1]/reverser</property>
+                </binding>
+            </key>			<key n="119">
+				<name>w</name>
+				<desc>Walk forward toward view</desc>
+				<repeatable>true</repeatable>
+				<binding>
+					<command>nasal</command>
+					<script>walk.walk_about(0.1)</script>
+				</binding>
+			</key>
+			<key n="87">
+				<name>W</name>
+				<desc>Walk backward from view</desc>
+				<repeatable>true</repeatable>
+				<binding>
+					<command>nasal</command>
+					<script>walk.walk_about(-0.1)</script>
+				</binding>
+			</key>						
+		</keyboard>
+	</input>
+	
+	<!-- Ajuste dos controles -->
+	<controls>
+		<groundservice>
+			<active type="bool">false</active>
+		</groundservice>
+		<gear>
+			<brake-parking>1.0</brake-parking>
+			<gear-down>true</gear-down>
+		</gear>
+		<lighting>
+			<instruments-norm>0.0</instruments-norm>
+			<landing-lights type="bool">0</landing-lights>
+			<beacon type="bool">0</beacon>
+			<strobe type="bool">0</strobe>
+			<nav-lights type="bool">0</nav-lights>
+			<cabin-lights type="bool">0</cabin-lights>
+			<wing-lights type="bool">0</wing-lights>
+			<taxi-light type="bool">0</taxi-light>
+			<instrument-lights type="bool">0</instrument-lights>
+		</lighting>
+		<cabin>
+			<fan type="bool">0</fan>
+			<heat type="bool">0</heat>
+		</cabin>
+		<messages>
+			<embarque type="bool">0</embarque>
+			<eqpeletr type="bool">0</eqpeletr>
+			<duremb type="bool">0</duremb>
+			<decauth type="bool">0</decauth>
+			<servicobordo type="bool">0</servicobordo>
+			<cmteprobl type="bool">0</cmteprobl>
+			<cmtepousauth type="bool">0</cmtepousauth>
+			<cmteaguardar type="bool">0</cmteaguardar>
+			<taxiando type="bool">0</taxiando>
+			<fastenseatbelt type="bool">0</fastenseatbelt>
+			<turb type="bool">0</turb>
+			<inicialcmte type="bool">0</inicialcmte>
+			<instrsegur type="bool">0</instrsegur>
+		</messages>
+	</controls>
+	
+    <instrumentation>
+        <path>Aircraft/Embraer-195/Systems/Embraer195-instrumentation.xml</path>
+    </instrumentation>
+
+
+	<!-- Codigos NASAL -->
+	<nasal>
+        <b777>
+            <file>Aircraft/Embraer-195/Nasal/Electrical.nas</file>
+            <file>Aircraft/Embraer-195/Nasal/flightdirector.nas</file>
+            <file>Aircraft/Embraer-195/Nasal/systems.nas</file>
+            <file>Aircraft/Embraer-195/Nasal/lighting.nas</file>
+        </b777>
+	    <livery>
+	        <file>Aircraft/Embraer-195/Nasal/livery.nas</file>
+	    </livery>
+		<tyresmoke>
+			<file>Aircraft/Embraer-195/Nasal/tyresmoke.nas</file>
+		</tyresmoke>
+		<general>
+			<file>Aircraft/Embraer-195/Nasal/general-yasim.nas</file>
+		</general>
+		<lights>
+			<file>Aircraft/Embraer-195/Nasal/lights.nas</file>
+		</lights>
+		<groundservice>
+			<file>Aircraft/Embraer-195/Nasal/groundservice.nas</file>
+		</groundservice>
+		<messagesys>
+			<file>Aircraft/Embraer-195/Nasal/messagesys.nas</file>
+		</messagesys>
+		<effects>
+			<file>Aircraft/Embraer-195/Nasal/effects.nas</file>
+		</effects>	
+		<walk>
+			<file>Aircraft/Embraer-195/Nasal/walk.nas</file>
+		</walk>
+		<pushback>
+			<file>Aircraft/Embraer-195/Nasal/pushback.nas</file>
+		</pushback>
+		<limits>
+			<file>Aircraft/Embraer-195/Nasal/limits.nas</file>
+		</limits>
+	</nasal>
+	
+    <consumables>
+        <fuel>
+            <tank n="0">
+                <name>LH Main</name>
+            </tank>
+            <tank n="1">
+                <name>RH Main</name>
+            </tank>
+        </fuel>
+    </consumables>
+
+	<!-- Definio de limites da aeronave -->
+	<limits>
+		<!-- Reconfigurar esses parmetros -->
+		<max-flap-extension-speed>
+			<flaps>0.167</flaps>
+			<speed>220</speed>
+		</max-flap-extension-speed>
+		<max-flap-extension-speed>
+			<flaps>0.333</flaps>
+			<speed>210</speed>
+		</max-flap-extension-speed>
+		<max-flap-extension-speed>
+			<flaps>0.667</flaps>
+			<speed>185</speed>
+		</max-flap-extension-speed>
+		<max-flap-extension-speed>
+			<flaps>0.833</flaps>
+			<speed>170</speed>
+		</max-flap-extension-speed>
+		<max-flap-extension-speed>
+			<flaps>1.000</flaps>
+			<speed>155</speed>
+		</max-flap-extension-speed>
+
+		<!-- Reconfigurar esses parmetros -->
+		<vne>480.86</vne>
+
+		<max-gear-extension-speed>320</max-gear-extension-speed>
+
+		<max-positive-g>4.4</max-positive-g>
+		<max-negative-g>-2.76</max-negative-g>
+
+	</limits>
+
+	<!-- Ajustes da Instrumentação -->
+	<instrumentation>
+        <mk-viii>  <!-- mk-viii configuration, see: http://wiki.flightgear.org/index.php/GPWS -->
+            <serviceable>true</serviceable>     <!-- EGPWS_ENABLE -->
+            <configuration-module>
+                <category-1>                    <!-- AIRCRAFT_MODE_TYPE_SELECT -->
+                   255 <!-- aircraft type T1, fast turbofan -->
+                </category-1>
+                <category-4>                    <!-- ALTITUDE_CALLOUTS -->
+                    13 <!-- enable all altitude callouts -->
+                </category-4>
+                <category-13>                   <!-- INPUT_OUTPUT_DISCRETE_TYPE_SELECT -->
+                     5 <!-- flashing warning lamp -->
+                </category-13>
+            </configuration-module>
+            <inputs>                            <!-- Module I/O -->
+                <arinc429>
+                    <!-- provide fixed value for decision height -->
+                    <decision-height-ncd> false </decision-height-ncd>
+                    <decision-height> 250 </decision-height>
+                </arinc429>
+            </inputs>
+            <input-feeders>    <!-- disable some internal default feeders -->
+                <discretes>
+                    <!-- will provide custom (nasal) sources for the following input feeders -->
+                    <glideslope-inhibit> false </glideslope-inhibit>
+                    <landing-gear> false </landing-gear>
+                    <landing-flaps> false </landing-flaps>
+                </discretes>
+            </input-feeders>
+            <speaker>                           <!-- Speaker Configuration -->
+                <max-dist> 2 </max-dist>        <!-- Max. distance where speaker is heard -->
+                <reference-dist> 1 </reference-dist> <!-- Distance to pilot -->
+                <volume> 0.6 </volume>          <!-- Volume at reference distance -->
+            </speaker>
+        </mk-viii>
+
+        <adf n="1">
+            <serviceable type="bool">1</serviceable>
+            <mode>adf</mode>
+            <frequencies>
+                <selected-khz>341</selected-khz>
+                <standby-khz>379</standby-khz>
+            </frequencies>
+        </adf>
+        <efis>
+            <eicas>
+                <msg n="0">
+                    <text>TESTING TESTING</text>
+                    <red>0.8</red>
+                    <green>0.4</green>
+                    <blue>0.2</blue>
+                    <alpha>0.5</alpha>
+                </msg>
+            </eicas>
+        </efis>
+        <rmu>
+            <unit n="0">
+                <source-index type="int">0</source-index>
+                <source type="string">comm1</source>
+                </unit>
+            <unit n="1">
+                <source-index type="int">2</source-index>
+                <source type="string">nav1</source>
+            </unit>
+            <unit n="2">
+                <source-index type="int">5</source-index>
+                <source type="string">adf</source>
+            </unit>
+        </rmu>
+		<wxradar>
+			<serviceable>true</serviceable>
+			<range type="int" archive="y">20</range>
+			<minimized type="bool" archive="y">false</minimized>
+			<switch archive="y">on</switch>
+			<mode archive="y">wx</mode>
+			<lightning type="bool" archive="y">true</lightning>
+			<display-mode archive="y">arc</display-mode>
+		</wxradar>
+		<radar>
+			<range type="int" archive="y">20</range>
+		</radar>
+		<nav>
+			<radials>
+				<selected-deg type="double">000</selected-deg>
+			</radials>
+		</nav>
+		<transponder>
+			<id-code>1200</id-code>
+			<ta-ra>0</ta-ra>
+		</transponder>
+	</instrumentation>
+	
+	
+
+	<systems>
+		<autoflight>
+			<serviceable type="bool">true</serviceable>
+		</autoflight>
+	</systems>
+	
+	<!-- OUTROS -->
+	<!-- presets for the FlightGear autoflight system MCP panel -->
+	<autopilot>
+		<settings>
+			<target-altitude-ft type="double">4000.0</target-altitude-ft>
+			<heading-bug-deg type="double">283.0</heading-bug-deg>
+			<target-speed-kt type="double">200.0</target-speed-kt>
+		</settings>
+	</autopilot>
+
+	<!-- Contrails -->
+	<environment>
+		<params>
+			<contrail-altitude>26000</contrail-altitude>
+		</params>
+        <turbulence>
+            <use-cloud-turbulence type="bool">false</use-cloud-turbulence>
+        </turbulence>
+   	</environment>
+
+
+
+</PropertyList>

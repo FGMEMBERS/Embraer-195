@@ -1,0 +1,296 @@
+<!-- EMBRAER E-Jet 195 LR | YASIM configuration file.  
+     =================================================================================================================
+      Creation :
+      
+      Isaias Prestes    July 10, 2010 14:05:22 AM.      An alternative FDM to Embraer 195.
+      
+      Revisions : 
+      
+      Isaias Prestes    XXXXXXXXXXXXXXXXXXXXXXXXX       XXXXX XXXX XXXX.
+-->
+
+<!--
+    Reference:
+    
+    * Roy Langton, Chuck Clark, Martin Hewitt, Lonnie Richards, "Aircraft Fuel Systems"
+      Wiley | 2009.07.27 | ISBN: 0470057084, 156347963X | 366 pages
+	* SmartCockpit = http://www.smartcockpit.com/pdf/plane/embraer/EMBRAER=190=195
+	* EMBRAER 195 = Airport Planning Manual 
+		http://www.embraercommercialjets.com/img/download/216.pdf
+		http://www.embraercommercialjets.com/img/download/217.pdf
+-->
+<airplane mass="63868">
+
+  <!-- ############### -->
+  <!-- # PERFORMANCE # -->
+  <!-- ############### -->
+
+  <!-- Approach configuration -->
+  <approach speed="132" aoa="5" fuel="0.2">
+    <control-setting axis="/controls/engines/engine[0]/throttle-lever" value="0.35"/>
+    <control-setting axis="/controls/engines/engine[1]/throttle-lever" value="0.35"/>
+    <control-setting axis="/controls/flight/flaps" value="1"/>
+    <control-setting axis="/surface-positions/slats" value="1"/>
+    <control-setting axis="/controls/gear/gear-down" value="1"/>
+    <solve-weight idx="0" weight="350"/>
+    <solve-weight idx="1" weight="45000"/>
+  </approach>
+
+  <!-- Cruise configuration 
+		Max cruising speed Mach 0.82 or 890km/h (481kt)
+		Standard range with max passengers at long range cruising speed 2593km ((1400nm), 
+		LR range at same conditions 3334km (1800nm).
+-->
+  <cruise speed="481" alt="35000" fuel="0.8">
+    <control-setting axis="/controls/engines/engine[0]/throttle-lever" value="0.90"/>
+    <control-setting axis="/controls/engines/engine[1]/throttle-lever" value="0.90"/>
+    <control-setting axis="/controls/flight/flaps" value="0.0"/>
+    <control-setting axis="/controls/flight/elevator-trim" value="0"/>
+    <control-setting axis="/controls/gear/gear-down" value="0"/>
+    <solve-weight idx="0" weight="350"/>
+    <solve-weight idx="1" weight="45000"/>
+  </cruise>
+
+  <!-- ############ -->
+  <!-- # FUSELAGE # -->
+  <!-- ############ -->
+  <cockpit x="14.5541" y="0.419403" z="1.00871"/>
+
+  <!-- Fuselage -->
+  <fuselage ax="17.6709" ay="0" az="-0.69926" bx="15.9147" by="0" bz="-0.34174" width="2.17" taper="0.04608295" midpoint="1.0"/>
+  <fuselage ax="15.9147" ay="0" az="-0.34174" bx="14.3602" by="0" bz="0.079556" width="2.84" taper="0.7640844" midpoint="1.0"/>
+  <fuselage ax="14.3602" ay="0" az="0.079556" bx="12.9469" by="0" bz="0.172358" width="3.06" taper="0.9281044" midpoint="1.0"/>
+  <fuselage ax="12.9469" ay="0" az="0.172358" bx="-8.88215" by="0" bz="0.185058" width="3.06" taper="1.0" midpoint="1.0"/>
+  <fuselage ax="-8.88215" ay="0" az="0.185058" bx="-12.2147" by="0" bz="0.403838" width="3.00" taper="1.02" midpoint="1.0"/>
+  <fuselage ax="-12.2147" ay="0" az="0.403838" bx="-21.2239" by="0" bz="1.18519" width="0.38" taper="7.894737" midpoint="1.0"/>
+  <!-- Engines -->
+  <fuselage ax="4.656" ay="4.57057" az="-1.62946" bx="3.35923" by="4.57289" bz="-1.62706" width="1.94" taper="0.8659794" midpoint="1.0"/>
+  <fuselage ax="3.35923" ay="4.57289" az="-1.62706" bx="0.0897703" by="4.57312" bz="-1.6445" width="0.06" taper="32.33333" midpoint="1.0"/>
+  <fuselage ax="4.656" ay="-4.57057" az="-1.62946" bx="3.35923" by="-4.57289" bz="-1.62706" width="1.94" taper="0.8659794" midpoint="1.0"/>
+  <fuselage ax="3.35923" ay="-4.57289" az="-1.62706" bx="0.0897703" by="-4.57312" bz="-1.6445" width="0.06" taper="32.33333" midpoint="1.0"/>
+
+  <!-- ######### -->
+  <!-- # WINGS # -->
+  <!-- ######### -->
+  <wing x="0.113973" y="1.66342" z="-1.05383" taper="0.2601476" incidence="0.0"
+    length="7.63" chord="5.42" sweep="25.0" dihedral="4.5"
+    camber="0.133">
+    <stall aoa="15" width="3.815" peak="1.5"/>
+    <flap0 start="0.0188074" end="0.7292506" lift="1.5" drag="1.95"/>
+    <flap1 start="0.7405318" end="0.9693795" lift="1.4" drag="1.15"/>
+    <spoiler start="0.01799856" end="0.975522" lift="0.2" drag="6.7"/>
+
+    <control-input axis="/controls/flight/flaps" control="FLAP0"/>
+    <control-input axis="/controls/flight/aileron" control="FLAP1" split="true"/>
+    <control-input axis="/controls/flight/aileron-trim" control="FLAP1" split="true"/>
+    <control-input axis="/controls/flight/spoilers" control="SPOILER"/>
+
+    <control-output control="FLAP0" side="left"
+      prop="/surface-positions/left-flap-pos-norm"/>
+    <control-output control="FLAP0" side="right"
+      prop="/surface-positions/right-flap-pos-norm"/>
+    <control-output control="FLAP0" prop="/surface-positions/flap-pos-norm"/>
+
+    <control-output control="FLAP1" side="left"
+      prop="/surface-positions/left-aileron-pos-norm"/>
+    <control-output control="FLAP1" side="right"
+      prop="/surface-positions/right-aileron-pos-norm"/>
+    <control-output control="FLAP1" prop="/surface-positions/aileron-pos-norm"/>
+
+    <control-output control="SPOILER" side="left"
+      prop="/surface-positions/left-spoiler-pos-norm"/>
+    <control-output control="SPOILER" side="right"
+      prop="/surface-positions/right-spoiler-pos-norm"/>
+    <control-output control="SPOILER" prop="/surface-positions/spoiler-pos-norm"/>
+
+    <control-speed control="FLAP0" transition-time="15"/>
+    <control-speed control="FLAP1" transition-time="0.5"/>
+    <control-speed control="SPOILER" transition-time="1.0"/>
+
+  </wing>
+
+  <!-- ######################### -->
+  <!-- # HORIZONTAL STABILIZER # -->
+  <!-- ######################### -->
+  <hstab x="-17.861" y="0.6528" z="0.943737" taper="0.33" effectiveness="2"
+    length="5.87" chord="3.14" sweep="27.5" dihedral="7.0"
+    camber="-0.01">
+    <stall aoa="15" width="2.5" peak="1.3"/>
+    <flap0 start="0" end="0.8091993" lift="1.6" drag="1.2"/>
+    <control-input axis="/controls/flight/elevator" control="FLAP0"
+      square="true"/>
+    <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
+
+    <control-output control="FLAP0" side="left"
+      prop="surface-positions/left-elevator-pos-norm"/>
+    <control-output control="FLAP0" side="right"
+      prop="surface-positions/right-elevator-pos-norm"/>
+    <control-output control="FLAP0" prop="surface-positions/elevator-pos-norm"/>
+
+    <control-speed control="FLAP0" transition-time="0.5"/>
+  </hstab>
+
+  <!-- ####################### -->
+  <!-- # VERTICAL STABILIZER # -->
+  <!-- ####################### -->
+  <vstab x="-16.7442" y="0.0" z="1.75681" taper="0.35" effectiveness="2"
+    length="7.60" chord="5.27" sweep="39.0">
+    <stall aoa="16" width="5" peak="1.5"/>
+    <flap0 start="0" end="1" lift="1.6" drag="1.2"/>
+    <control-input axis="/controls/flight/rudder" control="FLAP0"
+      square="true" invert="true"/>
+    <control-input axis="/controls/flight/rudder-trim" control="FLAP0"
+      invert="true"/>
+    <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm"/>
+    <control-speed control="FLAP0" transition-time="0.5"/>
+  </vstab>
+
+  <!-- ########### -->
+  <!-- # ENGINES # -->
+  <!-- ########### -->
+  <!--
+General Electric CF34-10E6
+
+REFERENCE : http://easa.europa.eu/certification/type-certificates/docs/engines/EASA-TCDS-E.021_(IM)_GE_CF34-
+            -10E_Series_engines-04-12122008.pdf
+-->
+  <jet x="2.43876" y="1.62712" z="-4.57283" mass="5100" thrust="18820" spool-time="3"
+    egt="960" tsfc="0.327 " n1-idle="30" n1-max="106" n2-idle="60" n2-max="105">
+    <control-input axis="/controls/engines/engine[0]/throttle-lever" control="THROTTLE" src0="0.2" dst0="0" src1="1" dst1="1"/>
+    <control-input axis="/controls/engines/engine[0]/reverser" control="REVERSE_THRUST"/>
+    <control-output control="REVERSE_THRUST" prop="/surface-positions/reverser-norm[0]"/>
+    <control-speed control="REVERSE_THRUST" transition-time="2"/>
+    <actionpt x="-2.27073" y="1.62712" z="-4.57283"/>
+  </jet>
+  <jet x="2.43876" y="-1.62712" z="-4.57283" mass="5100" thrust="18820" spool-time="3"
+    egt="960" tsfc="0.327 " n1-idle="30" n1-max="106" n2-idle="60" n2-max="105">
+    <control-input axis="/controls/engines/engine[1]/throttle-lever" control="THROTTLE" src0="0.2" dst0="0" src1="1" dst1="1"/>
+    <control-input axis="/controls/engines/engine[1]/reverser" control="REVERSE_THRUST"/>
+    <control-output control="REVERSE_THRUST" prop="/surface-positions/reverser-norm[1]"/>
+    <control-speed control="REVERSE_THRUST" transition-time="2"/>
+    <actionpt x="-2.27073" y="-1.62712" z="-4.57283"/>
+  </jet>
+
+  <!-- ########### -->
+  <!-- # PUSHBACK # -->
+  <!-- ########### -->
+  <thruster x="19.28" y="0.00" z="-5.55" vx="1" vy="0" vz="0" thrust="20000">
+    <control-input axis="/sim/model/pushback/target-speed-fps" control="THROTTLE"
+      src0="-1" src1="1" dst0="-1" dst1="1"/>
+  </thruster>
+
+  <!-- ################ -->
+  <!-- # LANDING GEAR # -->
+  <!-- ################ -->
+  <!-- nose -->
+  <gear x="13.5143" y="0.0" z="-2.89802" retract-time="7" compression="0.7"
+    spring="1.2" damp="1.0" sfric="1.5" dfric="1.0">
+    <control-input axis="/controls/flight/rudder" control="STEER"
+      square="true"/>
+    <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+    <control-speed control="EXTEND" transition-time="7"/>
+    <control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
+  </gear>
+
+  <!-- left main -->
+  <gear x="-1.20438" y="2.94601" z="-3.25273" retract-time="7" compression="0.8"
+    spring="1.6" damp="1.4" sfric="1" dfric="0.9">
+    <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
+    <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+    <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+    <control-speed control="EXTEND" transition-time="7"/>
+    <control-output control="EXTEND" prop="gear/gear[1]/position-norm"/>
+  </gear>
+
+  <!-- right main -->
+  <gear x="-1.20438" y="-2.94601" z="-3.25273" retract-time="7" compression="0.8"
+    spring="1.6" damp="1.4" sfric="1" dfric="0.9">
+    <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
+    <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+    <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+    <control-speed control="EXTEND" transition-time="7"/>
+    <control-output control="EXTEND" prop="gear/gear[2]/position-norm"/>
+  </gear>
+
+  <!-- ############## -->
+  <!-- # FUEL TANKS # -->
+  <!-- ############## -->
+  <!-- Reference : 
+
+    * Roy Langton, Chuck Clark, Martin Hewitt, Lonnie Richards, "Aircraft Fuel Systems"
+      Wiley | 2009.07.27 | ISBN: 0470057084, 156347963X | 366 pages
+    * EMBRAER 195 - Airport Planning Manual 
+ -->
+  <!-- Center tank -->
+  <!-- Wing -->
+  <tank x="-0.6971" y="5.165" z="-0.45163" jet="true" capacity="14440.5"/>
+  <tank x="-0.6971" y="-5.165" z="-0.45163" jet="true" capacity="14440.5"/>
+  <!-- Reserve tail -->
+ -->
+
+  <!-- ########## -->
+  <!-- # WEIGHT # -->
+  <!-- ########## -->
+  <!-- Pax economic class -->
+  <weight x="-1.0" y="0" z="0.447189" mass-prop="/sim/weight[0]/weight-lb"/>
+  <!-- Pax business class -->
+  <weight x="9.58" y="0" z="0.447189" mass-prop="/sim/weight[1]/weight-lb"/>
+  <!-- Crew -->
+  <weight x="14.88" y="0" z="0.447189" mass-prop="/sim/weight[3]/weight-lb"/>
+  <!-- Food and supriments -->
+  <weight x="12.49" y="0" z="0" mass-prop="/sim/weight[4]/weight-lb"/>
+  <!-- Food and supriments -->
+  <weight x="-14.28" y="0" z="0" mass-prop="/sim/weight[5]/weight-lb"/>
+  <!-- Cargo frontal -->
+  <weight x="8.64" y="0" z="-0.681253" mass-prop="/sim/weight[6]/weight-lb"/>
+  <!-- Cargo tail -->
+  <weight x="-8.37" y="0" z="-0.681253" mass-prop="/sim/weight[7]/weight-lb"/>
+
+  <!--
+  <weight x="-7.56" y="5.90"   z="0.00"
+      size="0.25"
+      mass-prop="sim/weight[0]/weight-lb"/>
+  <weight x="-7.56" y="4.83"   z="-0.22"
+      size="0.25"
+      mass-prop="sim/weight[1]/weight-lb"/>
+  <weight x="-7.56" y="3.62"   z="-0.37"
+      size="0.25"
+      mass-prop="sim/weight[2]/weight-lb"/>
+  <weight x="-7.56" y="1.69"   z="-0.44"
+      size="0.25"
+      mass-prop="sim/weight[3]/weight-lb"/>
+  <weight x="-7.56" y="0.56"   z="-0.44"
+      size="0.25"
+      mass-prop="sim/weight[4]/weight-lb"/>
+  <weight x="-7.56" y="0.00"   z="-0.44"
+      size="0.25"
+      mass-prop="sim/weight[5]/weight-lb"/>
+  <weight x="-7.56" y="-0.56"   z="-0.44"
+      size="0.25"
+      mass-prop="sim/weight[6]/weight-lb"/>
+  <weight x="-7.56" y="-1.69"   z="-0.44"
+      size="0.25"
+      mass-prop="sim/weight[7]/weight-lb"/>
+  <weight x="-7.56" y="-3.62"   z="-0.37"
+      size="0.25"
+      mass-prop="sim/weight[8]/weight-lb"/>
+  <weight x="-7.56" y="-4.83"   z="-0.22"
+      size="0.25"
+      mass-prop="sim/weight[9]/weight-lb"/>
+  <weight x="-7.56" y="-5.9"   z="0.00"
+      size="0.25"
+      mass-prop="sim/weight[10]/weight-lb"/>
+  <weight x="-7.56" y="-5.9"   z="0.00"
+      size="0.25"
+      mass-prop="sim/weight[11]/weight-lb"/>
+-->
+
+  <!-- ########### -->
+  <!-- # BALLAST # -->
+  <!-- ########### -->
+  <ballast x="-16" y="0" z="0.0" mass="-20850"/>
+  <ballast x="-16" y="0" z="0.0" mass="800"/>
+  <ballast x="16" y="0" z="0.0" mass="15300"/>
+
+
+</airplane>
