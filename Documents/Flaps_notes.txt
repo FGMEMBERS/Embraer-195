@@ -1,0 +1,24 @@
+NOTES
+=====
+
+1 - LANDING GEAR OPERATION
+EXTENSION - 250 KIAS (not sure)
+RETRACTION - 250 KIAS (not sure)
+
+2 - FLAP EXTENSION SPEED
+1- 250 KIAS 4- 1X0 KIAS
+2- 2XX KIAS 5- 1X0 KIAS
+3- 200 KIAS FULL- 1XX KAIS (not sure about any of those speeds)
+
+3 - MAX SPEED
+BELOW 8000 ft - 300 KIAS (not sure about the numbers again)
+
+Here is a good one of a 190LR, not a 195 but probably similar or even the same.
+http://origin-www.airliners.net/photo/Embraer/Embraer-ERJ-190-100LR-190LR/1106768/L/&sid=a70fa563bb5c8b8833b3b2115b1638dc
+
+flap1 = 220kias
+flap2 = 215kias
+flap3 = 200kias
+flap4 = 180kias
+flap5 = 180kias
+FULL = 165kias

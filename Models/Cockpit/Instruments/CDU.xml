@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--    FLIGHT MANAGEMENT SYSTEM    -->
+<PropertyList>
+
+    <path>CDU.ac</path>
+
+    <animation>
+        <type>material</type>
+        <object-name>CDU-lamp</object-name>
+        <emission>
+            <red>0.5</red>
+            <green>0.8</green>
+            <blue>0.7</blue>
+            <factor-prop>controls/lighting/panel-norm</factor-prop>
+        </emission>
+    </animation>
+
+</PropertyList>

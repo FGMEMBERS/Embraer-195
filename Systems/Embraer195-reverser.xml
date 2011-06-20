@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<system name="reverser">
+
+  <channel>
+
+     <switch name="systems/reverser/control">
+          <default value="0"/>
+          <test value="2">
+                systems/reverser/command == 1
+          </test>
+          <output>propulsion/engine/reverser-angle-rad</output>
+     </switch>
+
+     <switch name="systems/reverser/control2">
+          <default value="0"/>
+          <test value="2">
+                systems/reverser/command == 1
+          </test>
+          <output>propulsion/engine[1]/reverser-angle-rad</output>
+     </switch>
+
+  </channel>
+
+</system>

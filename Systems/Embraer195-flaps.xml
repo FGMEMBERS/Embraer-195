@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+
+<system name="flaps">
+
+  <channel name="Flaps">
+<!--
+      <kinematic name="Flaps Control">
+        <input>fcs/flap-cmd-norm</input>
+        <traverse>
+          <setting>
+            <position>  0 </position>
+            <time>      0 </time>
+          </setting>
+          <setting>
+            <position> 7 </position>
+            <time>     10 </time>
+          </setting>
+          <setting>
+            <position> 10 </position>
+            <time>      5 </time>
+          </setting>
+          <setting>
+            <position> 20 </position>
+            <time>      5 </time>
+          </setting>
+          <setting>
+            <position> 20 </position>
+            <time>      2 </time>
+          </setting>
+          <setting>
+            <position> 20 </position>
+            <time>      2 </time>
+          </setting>
+          <setting>
+            <position> 37 </position>
+            <time>     15 </time>
+          </setting>
+        </traverse>
+        <output>fcs/flap-pos-deg</output>
+      </kinematic>
+
+      <aerosurface_scale name="flap normalization">
+        <input>fcs/flap-pos-deg</input>
+        <domain>
+          <min>  0 </min>
+          <max> 37 </max>
+        </domain>
+        <range>
+          <min> 0 </min>
+          <max> 1 </max>
+        </range>
+        <output>fcs/flap-pos-norm</output>
+      </aerosurface_scale>
+-->  
+  
+   <kinematic name="Flaps Control">
+     <input>fcs/flap-cmd-norm</input>
+     <traverse>
+       <setting>
+          <position>  0 </position><!-- 0 deg -->
+          <time>      0 </time>
+       </setting>
+       <setting>
+          <position>  0.18919 </position><!-- 7 deg -->
+          <time>      10 </time>
+       </setting>
+       <setting>
+          <position>  0.27027 </position><!-- 10 deg -->
+          <time>      5 </time>
+       </setting>
+       <setting>
+          <position>  0.54054 </position><!-- 20 deg -->
+          <time>      5 </time>
+       </setting>
+       <setting>
+          <position>  0.54055</position><!-- 20 deg -->
+          <time>      5 </time>
+       </setting>
+       <setting>
+          <position>  0.54056</position><!-- 20 deg -->
+          <time>      5 </time>
+       </setting>
+       <setting>
+          <position>  1</position><!-- 37 deg -->
+          <time>      15 </time>
+       </setting>
+     </traverse>
+     <output>fcs/flap-pos-norm</output>
+   </kinematic>
+
+  </channel>
+
+</system>

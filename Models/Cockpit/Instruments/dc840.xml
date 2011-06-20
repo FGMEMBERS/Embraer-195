@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!--
+Author : Syd Adams
+Primus 2000 DC850
+-->
+<PropertyList>
+
+<path>DC840.ac</path>
+
+    <animation>
+        <type>pick</type>
+        <object-name>DC840.pfd-hsi</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+        <binding>
+            <command>nasal</command>
+            <script>efis.primus.ctl_set("hsi");</script>
+        </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>DC840.tcas</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>efis.primus.ctl_set("tcas");</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>DC840.et</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>efis.primus.ctl_set("et");</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>DC840.jstk</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+             <binding>
+             <command>nasal</command>
+            <script>efis.primus.ctl_set("radar-up")</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>DC840.jstk</object-name>
+        <action>
+            <button>1</button>
+            <repeatable>false</repeatable>
+             <binding>
+             <command>nasal</command>
+            <script>efis.primus.ctl_set("radar-dn")</script>
+            </binding>
+        </action>
+    </animation>
+
+</PropertyList>

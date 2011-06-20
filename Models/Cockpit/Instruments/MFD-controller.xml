@@ -1,0 +1,117 @@
+<!--
+Syd Adams
+MFD controller  hotspots
+-->
+
+<PropertyList>
+
+    <name>MFD hotspots</name>
+    <w-base>146</w-base>
+    <h-base>58</h-base>
+    <w>146</w>
+    <h>58</h>
+
+<actions>
+<!--
+    <action>
+        <name>bezel outline</name>
+        <x>-73</x>
+        <y>-29</y>
+        <w>146</w>
+        <h>58</h>
+    </action>
+-->
+    <action>
+        <name>MAP-PLAN</name>
+        <button>0</button>
+        <x>-58</x>
+        <y>8</y>
+        <w>14</w>
+        <h>14</h>
+        <binding>
+            <command>nasal</command>
+                <script>bravo.primus.mc800_input("map");</script>
+        </binding>
+    </action>
+
+    <action>
+        <name>TCAS</name>
+        <button>0</button>
+        <x>-41</x>
+        <y>8</y>
+        <w>14</w>
+        <h>14</h>
+        <binding>
+            <command>nasal</command>
+                <script>bravo.primus.mc800_input("tcas");</script>
+        </binding>
+    </action>
+
+    <action>
+        <name>WX</name>
+        <button>0</button>
+        <x>-24</x>
+        <y>8</y>
+        <w>14</w>
+        <h>14</h>
+        <binding>
+            <command>nasal</command>
+                <script>bravo.primus.mc800_input("wx");</script>
+        </binding>
+    </action>
+
+    <action>
+        <name>Apt</name>
+        <button>0</button>
+        <x>-38</x>
+        <y>-22</y>
+        <w>10</w>
+        <h>10</h>
+        <binding>
+            <command>nasal</command>
+                <script>bravo.primus.mc800_input("apt");</script>
+        </binding>
+    </action>
+
+    <action>
+        <name>Data</name>
+        <button>0</button>
+        <x>-22</x>
+        <y>-22</y>
+        <w>10</w>
+        <h>10</h>
+        <binding>
+            <command>nasal</command>
+                <script>bravo.primus.mc800_input("dat");</script>
+        </binding>
+    </action>
+
+    <action>
+        <name>Range Up</name>
+        <button>0</button>
+        <x>-58</x>
+        <y>-10</y>
+        <w>12</w>
+        <h>12</h>
+        <binding>
+            <command>nasal</command>
+                <script>bravo.primus.mc800_input("radar-up");</script>
+        </binding>
+    </action>
+
+    <action>
+        <name>Range Down</name>
+        <button>0</button>
+        <x>-58</x>
+        <y>-22</y>
+        <w>12</w>
+        <h>12</h>
+        <binding>
+            <command>nasal</command>
+                <script>bravo.primus.mc800_input("radar-dn");</script>
+        </binding>
+    </action>
+
+</actions>
+
+</PropertyList>

@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+<!--
+Author : Syd Adams
+FMC
+-->
+<PropertyList>
+
+    <path>fmc.ac</path>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>FMC.knob1</object-name>
+        <property>instrumentation/primus1000/control/nav1ptr</property>
+        <interpolation>
+            <entry><ind>0.0</ind><dep>0.0</dep></entry>
+            <entry><ind>1.0</ind><dep>25.0</dep></entry>
+            <entry><ind>2.0</ind><dep>55.0</dep></entry>
+            <entry><ind>3.0</ind><dep>95.0</dep></entry>
+        </interpolation>
+        <axis>
+            <x>-1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>0.00</x-m>
+            <y-m>-0.040</y-m>
+            <z-m>-0.007</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>FMC.knob2</object-name>
+        <property>instrumentation/primus1000/control/nav2ptr</property>
+        <interpolation>
+            <entry><ind>0.0</ind><dep>0.0</dep></entry>
+            <entry><ind>1.0</ind><dep>25.0</dep></entry>
+            <entry><ind>2.0</ind><dep>55.0</dep></entry>
+            <entry><ind>3.0</ind><dep>95.0</dep></entry>
+        </interpolation>
+        <axis>
+            <x>-1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>0.00</x-m>
+            <y-m>0.038</y-m>
+            <z-m>-0.007</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>FMC.nav</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>efis.primus.ctl_set("nav");</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>FMC.fms</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>efis.primus.ctl_set("fms");</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>FMC.knob1</object-name>
+        <action>
+            <button>1</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>efis.primus.ctl_set("pointer1-dec");</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>FMC.knob1</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>efis.primus.ctl_set("pointer1-inc");</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>FMC.knob2</object-name>
+        <action>
+            <button>1</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>efis.primus.ctl_set("pointer2-dec");</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>FMC.knob2</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>efis.primus.ctl_set("pointer2-inc");</script>
+            </binding>
+        </action>
+    </animation>
+
+</PropertyList>

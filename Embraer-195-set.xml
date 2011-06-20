@@ -14,8 +14,8 @@
  ======================================================================        
  -->
 	<sim>
-		<description>Embraer 195</description>
-		<aircraft-version>20091001</aircraft-version>
+		<description>Embraer 195 (JSBSim)</description>
+		<aircraft-version>20110429</aircraft-version>
 		<status>alpha</status>
 		<author>Isaias V. Prestes</author>
 		<flight-model>jsb</flight-model>
@@ -40,7 +40,13 @@
 			<miscelania>
 				<file type="string">Default</file>
 			</miscelania>
-			
+            <pushback>
+					<ki type="double">0</ki>
+                  <kp type="double">1000</kp>
+                  <kd type="double">0</kd>
+                  <position-norm type="double">0</position-norm>
+            </pushback>
+
 		</model>
 
 		<!-- Distancia padrao da vista para o aviao (metros) -->
@@ -52,10 +58,10 @@
 			<type>lookfrom</type>
 			<internal type="bool">true</internal>
 			<config>
-				<x-offset-m type="double">-0.57</x-offset-m>
-				<y-offset-m type="double">0.8</y-offset-m>
-				<z-offset-m type="double">-22.75</z-offset-m>
-				<pitch-offset-deg>-13.5</pitch-offset-deg>
+				<x-offset-m type="double">-0.53</x-offset-m>
+				<y-offset-m type="double">2.21329</y-offset-m>
+				<z-offset-m type="double">-14.49874</z-offset-m>
+				<pitch-offset-deg>-8.5</pitch-offset-deg>
 				<limits>
 					<enabled type="bool">true</enabled>
 					<left>
@@ -100,8 +106,8 @@
 		      <pitch-offset-deg>-8.0</pitch-offset-deg>
 		      <heading-offset-deg type="double">90</heading-offset-deg> <!-- parallel to the panel -->
 		      <x-offset-m archive="y"> -2.0 </x-offset-m> <!--Left/Right -->
-		      <y-offset-m archive="y"> 0.30 </y-offset-m> <!--Up/Down -->
-		      <z-offset-m archive="y"> 4.00 </z-offset-m> <!--Fdw/Back -->
+		      <y-offset-m archive="y"> 1.5 </y-offset-m> <!--Up/Down -->
+		      <z-offset-m archive="y"> 0 </z-offset-m> <!--Fdw/Back -->
 		    </config>
 	    </view>
 		<view n="1501">
@@ -116,7 +122,7 @@
 			      <pitch-offset-deg>-8.0</pitch-offset-deg>
 			      <heading-offset-deg type="double">225</heading-offset-deg> <!-- parallel to the panel -->
 			      <x-offset-m archive="y"> 2.0 </x-offset-m> <!--Left/Right -->
-			      <y-offset-m archive="y"> 0.30 </y-offset-m> <!--Up/Down -->
+			      <y-offset-m archive="y"> 1.5 </y-offset-m> <!--Up/Down -->
 			      <z-offset-m archive="y"> -10.00 </z-offset-m> <!--Fdw/Back -->
 		    </config>
 	    </view>
@@ -131,9 +137,9 @@
 				<default-field-of-view-deg type="double">55</default-field-of-view-deg>
 				<heading-offset-deg type="double">0</heading-offset-deg>
 				<!-- x/y/z == right/up/back -->
-				<x-offset-m type="double"> 0.57</x-offset-m>
-				<y-offset-m type="double">0.8</y-offset-m>
-				<z-offset-m type="double">-22.75</z-offset-m>
+				<x-offset-m type="double"> 0.53</x-offset-m>
+				<y-offset-m type="double">2.21329</y-offset-m>
+				<z-offset-m type="double">-14.49874</z-offset-m>
 				<pitch-offset-deg archive="y">-10.0</pitch-offset-deg>
 			</config>
 		</view>
@@ -150,18 +156,18 @@
 		<flaps>
 			<setting>0.000</setting>
 			<!-- flaps up -->
-			<setting>0.033</setting>
-			<!-- flaps 1  -->
-			<setting>0.166</setting>
-			<!-- flaps 5  -->
-			<setting>0.500</setting>
-			<!-- flaps 15 -->
-			<setting>0.666</setting>
+			<setting>0.18919</setting>
+			<!-- flaps 7  -->
+			<setting>0.27027</setting>
+			<!-- flaps 10  -->
+			<setting>0.54054</setting>
 			<!-- flaps 20 -->
-			<setting>0.833</setting>
-			<!-- flaps 25 -->
-			<setting>1.000</setting>
-			<!-- flaps 30 -->
+			<setting>0.54055</setting>
+			<!-- flaps 20 -->
+			<setting>0.54056</setting>
+			<!-- flaps 20 -->
+			<setting>1.0</setting>
+			<!-- flaps 37 -->
 		</flaps>
 		
 	    <multiplay>
@@ -205,7 +211,7 @@
 			</autopilot>
 			<!-- Outros sistemas -->
 			<system>
-				<path>Aircraft/Generic/generic-systems.xml</path>
+				<path>Aircraft/Embraer-195/Systems/Embraer195-systems.xml</path>
 			</system>
 		</systems>
 
@@ -250,7 +256,7 @@
 			    <desc>Parking brakes</desc>
 		   </key>
 			<key>
-				<name>w</name>
+				<name>m</name>
 				<desc>Engage nose wheel steering</desc>
 			</key>
 		</help>
@@ -326,20 +332,14 @@
 							<dialog-name>effectscontrol</dialog-name>
 						</binding>
 					</item>
-					<item>
-						<label>Pushback</label>
-						<binding>
-							<command>nasal</command>
-							<script>
-							  var dlg = gui.Dialog.new("/sim/gui/dialogs/pushback-config/dialog", "Aircraft/Embraer-195/Dialogs/pushback.xml");
-				       </script>
-						</binding>
-						<binding>
-							<command>dialog-show</command>
-							<dialog-name>pushback</dialog-name>
-						</binding>
-					</item>
-					
+                    <item >
+                        <label>Pushback</label>
+                        <name>pushback</name>
+                        <binding>
+                            <command>dialog-show</command>
+                            <dialog-name>pushback</dialog-name>
+                        </binding>
+                    </item>					
 					<item>
 						<label>Ground Service</label>
 						<binding>
@@ -507,9 +507,10 @@
 	</nasal>
 	
 
-	<!-- Definio de limites da aeronave -->
+	<!-- Definicao de limites da aeronave -->
+	<!-- Reconfigurar esses parmetros -->
+	<!--
 	<limits>
-		<!-- Reconfigurar esses parmetros -->
 		<max-flap-extension-speed>
 			<flaps>0.167</flaps>
 			<speed>220</speed>
@@ -531,7 +532,6 @@
 			<speed>155</speed>
 		</max-flap-extension-speed>
 
-		<!-- Reconfigurar esses parmetros -->
 		<vne>480.86</vne>
 
 		<max-gear-extension-speed>320</max-gear-extension-speed>
@@ -540,7 +540,8 @@
 		<max-negative-g>-2.76</max-negative-g>
 
 	</limits>
-
+ -->
+ 
 	<!-- Ajustes da Instrumentação -->
 	<instrumentation>
 		<mk-viii>

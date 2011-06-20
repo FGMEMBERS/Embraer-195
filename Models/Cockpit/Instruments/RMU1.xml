@@ -1,0 +1,673 @@
+<?xml version="1.0"?>
+<!--    RADIO MANAGEMENT UNIT   -->
+<PropertyList>
+
+<path>rmu.ac</path>
+
+    <animation>
+        <type>select</type>
+        <condition>
+            <greater-than>
+               <property>systems/electrical/bus-volts</property>
+               <value>5</value>
+              </greater-than>
+        </condition>
+        <object-name>Com.1</object-name>
+        <object-name>Com.2</object-name>
+        <object-name>Com.3</object-name>
+        <object-name>Com.4</object-name>
+        <object-name>Com.5</object-name>
+        <object-name>Com.11</object-name>
+        <object-name>Com.12</object-name>
+        <object-name>Com.13</object-name>
+        <object-name>Com.14</object-name>
+        <object-name>Com.15</object-name>
+        <object-name>Nav.1</object-name>
+        <object-name>Nav.2</object-name>
+        <object-name>Nav.3</object-name>
+        <object-name>Nav.4</object-name>
+        <object-name>Nav.5</object-name>
+        <object-name>Nav.11</object-name>
+        <object-name>Nav.12</object-name>
+        <object-name>Nav.13</object-name>
+        <object-name>Nav.14</object-name>
+        <object-name>Nav.15</object-name>
+        <object-name>Atc.1</object-name>
+        <object-name>Atc.2</object-name>
+        <object-name>Atc.3</object-name>
+        <object-name>Atc.4</object-name>
+        <object-name>Adf.2</object-name>
+        <object-name>Adf.3</object-name>
+        <object-name>Adf.4</object-name>
+        <object-name>Adf.5</object-name>
+        <object-name>Com.num</object-name>
+        <object-name>Nav.num</object-name>
+        <object-name>Atc.num</object-name>
+        <object-name>Adf.num</object-name>
+        <object-name>RMU.period</object-name>
+        <object-name>RMU.selector</object-name>
+        <object-name>RMU.screen</object-name>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Com.num</object-name>
+        <property>instrumentation/rmu/unit/com-num</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Nav.num</object-name>
+        <property>instrumentation/rmu/unit/nav-num</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Adf.num</object-name>
+        <property>instrumentation/rmu/unit/adf-num</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+<animation>
+    <type>translate</type>
+    <object-name>RMU.selector</object-name>
+    <property>instrumentation/rmu/unit[0]/selected-xoffset</property>
+    <factor>0.0241</factor>
+    <axis>
+        <x>0</x>
+        <y>1</y>
+        <z>0</z>
+    </axis>
+</animation>
+
+<animation>
+    <type>translate</type>
+    <object-name>RMU.selector</object-name>
+    <property>instrumentation/rmu/unit[0]/selected-yoffset</property>
+    <factor>0.0173</factor>
+    <axis>
+        <x>0</x>
+        <y>0</y>
+        <z>-1</z>
+    </axis>
+</animation>
+
+<!-- Comm active-->
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Com.1</object-name>
+        <property>instrumentation/rmu/unit/com-freq</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Com.2</object-name>
+        <property>instrumentation/rmu/unit/com-freq</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Com.3</object-name>
+        <property>instrumentation/rmu/unit/com-freq</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Com.4</object-name>
+        <property>instrumentation/rmu/unit/com-freq</property>
+        <factor>1.0</factor>
+        <step>0.1</step>
+        <bias>0.005</bias>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Com.5</object-name>
+        <property>instrumentation/rmu/unit/com-freq</property>
+        <factor>10.0</factor>
+        <step>0.01</step>
+        <bias>0.005</bias>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+<!-- Comm standby-->
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Com.11</object-name>
+        <property>instrumentation/rmu/unit/com-stby</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Com.12</object-name>
+        <property>instrumentation/rmu/unit/com-stby</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Com.13</object-name>
+        <property>instrumentation/rmu/unit/com-stby</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Com.14</object-name>
+        <property>instrumentation/rmu/unit/com-stby</property>
+        <factor>1.0</factor>
+        <step>0.1</step>
+        <bias>0.005</bias>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Com.15</object-name>
+        <property>instrumentation/rmu/unit/com-stby</property>
+        <factor>10.0</factor>
+        <step>0.01</step>
+        <bias>0.005</bias>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+
+<!-- Nav active-->
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Nav.1</object-name>
+        <property>instrumentation/rmu/unit/nav-freq</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Nav.2</object-name>
+        <property>instrumentation/rmu/unit/nav-freq</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Nav.3</object-name>
+        <property>instrumentation/rmu/unit/nav-freq</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Nav.4</object-name>
+        <property>instrumentation/rmu/unit/nav-freq</property>
+        <factor>1.0</factor>
+        <step>0.1</step>
+        <bias>0.005</bias>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Nav.5</object-name>
+        <property>instrumentation/rmu/unit/nav-freq</property>
+        <factor>10.0</factor>
+        <step>0.01</step>
+        <bias>0.005</bias>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+<!-- Nav standby-->
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Nav.11</object-name>
+        <property>instrumentation/rmu/unit/nav-stby</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Nav.12</object-name>
+        <property>instrumentation/rmu/unit/nav-stby</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Nav.13</object-name>
+        <property>instrumentation/rmu/unit/nav-stby</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Nav.14</object-name>
+        <property>instrumentation/rmu/unit/nav-stby</property>
+        <factor>1.0</factor>
+        <step>0.1</step>
+        <bias>0.005</bias>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Nav.15</object-name>
+        <property>instrumentation/rmu/unit/nav-stby</property>
+        <factor>10.0</factor>
+        <step>0.01</step>
+        <bias>0.005</bias>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+<!-- ADF active-->
+
+    <animation>
+        <type>select</type>
+        <object-name>Adf.1</object-name>
+        <condition>
+            <and>
+                <greater-than>
+                    <property>instrumentation/rmu/unit/adf-freq</property>
+                    <value>999.99</value>
+                </greater-than>
+                <greater-than>
+                    <property>systems/electrical/outputs/adf</property>
+                    <value>5</value>
+                </greater-than>
+            </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Adf.1</object-name>
+        <property>instrumentation/rmu/unit/adf-freq</property>
+        <factor>0.0001</factor>
+        <step>1000</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Adf.2</object-name>
+        <property>instrumentation/rmu/unit/adf-freq</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Adf.3</object-name>
+        <property>instrumentation/rmu/unit/adf-freq</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Adf.4</object-name>
+        <property>instrumentation/rmu/unit/adf-freq</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Adf.5</object-name>
+        <property>instrumentation/rmu/unit/adf-freq</property>
+        <factor>1.0</factor>
+        <step>0.1</step>
+        <bias>0.005</bias>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+<!-- ATC active-->
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Atc.1</object-name>
+        <property>instrumentation/rmu/unit/atc-freq</property>
+        <factor>0.0001</factor>
+        <step>1000</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Atc.2</object-name>
+        <property>instrumentation/rmu/unit/atc-freq</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Atc.3</object-name>
+        <property>instrumentation/rmu/unit/atc-freq</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Atc.4</object-name>
+        <property>instrumentation/rmu/unit/atc-freq</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+<!-- Hotspots -->
+
+    <animation>
+        <type>pick</type>
+        <object-name>RMU.swp1</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>citation.RMU1.button("com-swp")</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>RMU.swp2</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>citation.RMU1.button("nav-swp")</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>RMU.comm</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>citation.RMU1.button("slct-com")</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>RMU.nav</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>citation.RMU1.button("slct-nav")</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>RMU.atc</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>citation.RMU1.button("slct-atc")</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>RMU.adf</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>citation.RMU1.button("slct-adf")</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>RMU.tune-dn</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>citation.RMU1.tune(-1,0)</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>RMU.tune-up</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>citation.RMU1.tune(1,0)</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>RMU.tune-dn</object-name>
+        <visible>true</visible>
+        <action>
+            <button>1</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>citation.RMU1.tune(-1,1)</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>RMU.tune-up</object-name>
+        <visible>true</visible>
+        <action>
+            <button>1</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>citation.RMU1.tune(1,1)</script>
+            </binding>
+        </action>
+    </animation>
+
+</PropertyList>

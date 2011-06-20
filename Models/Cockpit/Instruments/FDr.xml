@@ -1,0 +1,356 @@
+<?xml version="1.0"?>
+<!--
+Flight Director Control
+-->
+<PropertyList>
+
+    <path>FD-control.ac</path>
+
+    <animation>
+        <type>select</type>
+        <object-name>FD.AP-annun</object-name>
+        <condition>
+            <not>
+                <property>autopilot/locks/passive-mode</property>
+            </not>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>FD.stby-annun</object-name>
+        <condition>
+            <property>autopilot/locks/passive-mode</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>FD.YD-annun</object-name>
+        <condition>
+            <property>autopilot/locks/yaw-damper</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>FD.MTRIM-annun</object-name>
+        <condition>
+            <property>autopilot/locks/m-trim</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>FD.hdg-annun</object-name>
+        <condition>
+            <equals>
+                <property>instrumentation/flightdirector/lnav</property>
+                <value>1</value>
+            </equals>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>FD.nav-annun</object-name>
+        <condition>
+            <greater-than>
+                <property>instrumentation/flightdirector/lnav</property>
+                <value>1</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>FD.bc-annun</object-name>
+        <condition>
+            <property>instrumentation/nav/back-course-btn</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>FD.vnav-annun</object-name>
+        <condition>
+            <equals>
+                <property>instrumentation/flightdirector/vnav</property>
+                <value>1</value>
+            </equals>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>FD.app-annun</object-name>
+        <condition>
+            <property>instrumentation/flightdirector/gs-arm</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>FD.alt-annun</object-name>
+        <condition>
+            <equals>
+                <property>instrumentation/flightdirector/vnav</property>
+                <value>2</value>
+            </equals>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>FD.flc-annun</object-name>
+        <condition>
+            <equals>
+                <property>instrumentation/flightdirector/vnav</property>
+                <value>6</value>
+            </equals>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>FD.co-annun</object-name>
+        <condition>
+            <equals>
+                <property>instrumentation/flightdirector/vnav</property>
+                <value>0</value>
+            </equals>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>FD.vs-annun</object-name>
+        <condition>
+            <equals>
+                <property>instrumentation/flightdirector/vnav</property>
+                <value>3</value>
+            </equals>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>FD.bank-annun</object-name>
+        <condition>
+            <property>instrumentation/flightdirector/bank-limit-switch</property>
+        </condition>
+    </animation>
+
+<!-- OSG hotspots-->
+    <animation>
+        <type>pick</type>
+        <object-name>FD.hdg</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>citation.FlDr.set_mode("hdg")</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>FD.alt</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>citation.FlDr.set_mode("alt")</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>FD.flc</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>citation.FlDr.set_mode("flc")</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>FD.nav</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>citation.FlDr.set_mode("nav")</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>FD.vnav</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>citation.FlDr.set_mode("vnav")</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>FD.co</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>citation.FlDr.set_mode("co")</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>FD.app</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>citation.FlDr.set_mode("apr")</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>FD.bank</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>citation.FlDr.toggle_autopilot("bank");</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>FD.vs</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>citation.FlDr.set_mode("vs")</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>FD.bc</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>citation.FlDr.set_mode("bc")</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>FD.stby</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>citation.FlDr.set_mode("stby")</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>FD.ptch-up</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>citation.FlDr.pitch_wheel(1)</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>FD.ptch-dn</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>citation.FlDr.pitch_wheel(-1)</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>FD.AP</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>citation.FlDr.toggle_autopilot("ap");</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>FD.YD</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>citation.FlDr.toggle_autopilot("yd");</script>
+            </binding>
+        </action>
+    </animation>
+
+
+</PropertyList>

@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+
+<!-- This system monitors positive g-load, and when 9g is exceeded the
+     FDM freezes.  Unfreeze by pushing the stick forward.  Note that this
+     is disabled below 100 ft AGL, in order to not interfere with carrier
+     landings. -->
+
+<system name="over-g">
+
+  <channel name="Over-G">
+
+     <switch name="systems/over-g/trigger1">
+          <default value="simulation/integrator/position/rotational"/>
+          <test logic="AND" value="0">
+                accelerations/Nz gt 9
+                fcs/elevator-pos-norm lt -0.1
+                position/h-agl-ft gt 100
+          </test>
+          <test logic="AND" value="2">
+                fcs/elevator-pos-norm gt -0.1
+                systems/over-g/trigger1 eq 0
+          </test>
+          <output>simulation/integrator/position/rotational</output>
+     </switch>
+
+    <switch name="systems/over-g/trigger2">
+          <default value="simulation/integrator/position/translational"/>
+          <test logic="AND" value="0">
+                accelerations/Nz gt 9
+                fcs/elevator-pos-norm lt -0.1
+                position/h-agl-ft gt 100
+          </test>
+          <test logic="AND" value="2">
+                fcs/elevator-pos-norm gt -0.1
+                systems/over-g/trigger2 eq 0
+          </test>
+          <output>simulation/integrator/position/translational</output>
+    </switch>
+
+    <switch name="systems/over-g/trigger3">
+          <default value="simulation/integrator/rate/rotational"/>
+          <test logic="AND" value="0">
+                accelerations/Nz gt 9
+                fcs/elevator-pos-norm lt -0.1
+                position/h-agl-ft gt 100
+          </test>
+          <test logic="AND" value="2">
+                fcs/elevator-pos-norm gt -0.1
+                systems/over-g/trigger3 eq 0
+          </test>
+          <output>simulation/integrator/rate/rotational</output>
+    </switch>
+
+    <switch name="systems/over-g/trigger4">
+          <default value="simulation/integrator/rate/translational"/>
+          <test logic="AND" value="0">
+                accelerations/Nz gt 9
+                fcs/elevator-pos-norm lt -0.1
+                position/h-agl-ft gt 100
+          </test>
+          <test logic="AND" value="2">
+                fcs/elevator-pos-norm gt -0.1
+                systems/over-g/trigger4 eq 0
+          </test>
+          <output>simulation/integrator/rate/translational</output>
+    </switch>
+
+  </channel>
+
+</system>

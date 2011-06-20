@@ -19,7 +19,7 @@
   <object-name>whitelighttaxi</object-name>
   <condition>
    <and>
-    <property>controls/lighting/taxi-light</property>
+    <property>controls/switches/taxi-lights</property>
    <greater-than>
     <property>gear/gear/position-norm</property>
     <value>0.05</value>

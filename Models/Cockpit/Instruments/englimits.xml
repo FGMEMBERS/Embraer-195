@@ -1,0 +1,250 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+<path>englimit.ac</path>
+<!--  N1  -->
+<animation>
+    <type>textranslate</type>
+    <object-name>LHn1.1</object-name>
+    <property>engines/engine/fan</property>
+    <factor>0.001</factor>
+    <step>100</step>
+    <axis>
+        <x>0</x>
+        <y>-1</y>
+        <z>0</z>
+    </axis>
+</animation>
+
+<animation>
+    <type>textranslate</type>
+    <object-name>LHn1.2</object-name>
+    <property>engines/engine/fan</property>
+    <factor>0.01</factor>
+    <step>10</step>
+    <axis>
+        <x>0</x>
+        <y>-1</y>
+        <z>0</z>
+    </axis>
+</animation>
+
+<animation>
+    <type>textranslate</type>
+    <object-name>LHn1.3</object-name>
+    <property>engines/engine/fan</property>
+    <factor>0.1</factor>
+    <step>1</step>
+    <axis>
+        <x>0</x>
+        <y>-1</y>
+        <z>0</z>
+    </axis>
+</animation>
+
+<animation>
+    <type>textranslate</type>
+    <object-name>RHn1.1</object-name>
+    <property>engines/engine[1]/fan</property>
+    <factor>0.001</factor>
+    <step>100</step>
+    <axis>
+        <x>0</x>
+        <y>-1</y>
+        <z>0</z>
+    </axis>
+</animation>
+
+<animation>
+    <type>textranslate</type>
+    <object-name>RHn1.2</object-name>
+    <property>engines/engine[1]/fan</property>
+    <factor>0.01</factor>
+    <step>10</step>
+    <axis>
+        <x>0</x>
+        <y>-1</y>
+        <z>0</z>
+    </axis>
+</animation>
+
+<animation>
+    <type>textranslate</type>
+    <object-name>RHn1.3</object-name>
+    <property>engines/engine[1]/fan</property>
+    <factor>0.1</factor>
+    <step>1</step>
+    <axis>
+        <x>0</x>
+        <y>-1</y>
+        <z>0</z>
+    </axis>
+</animation>
+
+<!--     ITT     -->
+
+<animation>
+    <type>textranslate</type>
+    <object-name>LHitt.1</object-name>
+    <property>engines/engine/itt-celcius</property>
+    <factor>0.001</factor>
+    <step>100</step>
+    <axis>
+        <x>0</x>
+        <y>-1</y>
+        <z>0</z>
+    </axis>
+</animation>
+
+<animation>
+    <type>textranslate</type>
+    <object-name>LHitt.2</object-name>
+    <property>engines/engine/itt-celcius</property>
+    <factor>0.01</factor>
+    <step>10</step>
+    <axis>
+        <x>0</x>
+        <y>-1</y>
+        <z>0</z>
+    </axis>
+</animation>
+
+<animation>
+    <type>textranslate</type>
+    <object-name>LHitt.3</object-name>
+    <property>engines/engine/itt-celcius</property>
+    <factor>0.1</factor>
+    <step>1</step>
+    <axis>
+        <x>0</x>
+        <y>-1</y>
+        <z>0</z>
+    </axis>
+</animation>
+
+<animation>
+    <type>textranslate</type>
+    <object-name>RHitt.1</object-name>
+    <property>engines/engine[1]/itt-celcius</property>
+    <factor>0.001</factor>
+    <step>100</step>
+    <axis>
+        <x>0</x>
+        <y>-1</y>
+        <z>0</z>
+    </axis>
+</animation>
+
+<animation>
+    <type>textranslate</type>
+    <object-name>RHitt.2</object-name>
+    <property>engines/engine[1]/itt-celcius</property>
+    <factor>0.01</factor>
+    <step>10</step>
+    <axis>
+        <x>0</x>
+        <y>-1</y>
+        <z>0</z>
+    </axis>
+</animation>
+
+<animation>
+    <type>textranslate</type>
+    <object-name>RHitt.3</object-name>
+    <property>engines/engine[1]/itt-celcius</property>
+    <factor>0.1</factor>
+    <step>1</step>
+    <axis>
+        <x>0</x>
+        <y>-1</y>
+        <z>0</z>
+    </axis>
+</animation>
+
+<!--  N2  -->
+
+<animation>
+    <type>textranslate</type>
+    <object-name>LHn2.1</object-name>
+    <property>engines/engine/turbine</property>
+    <factor>0.001</factor>
+    <step>100</step>
+    <axis>
+        <x>0</x>
+        <y>-1</y>
+        <z>0</z>
+    </axis>
+</animation>
+
+<animation>
+    <type>textranslate</type>
+    <object-name>LHn2.2</object-name>
+    <property>engines/engine/turbine</property>
+    <factor>0.01</factor>
+    <step>10</step>
+    <axis>
+        <x>0</x>
+        <y>-1</y>
+        <z>0</z>
+    </axis>
+</animation>
+
+<animation>
+    <type>textranslate</type>
+    <object-name>LHn2.3</object-name>
+    <property>engines/engine/turbine</property>
+    <factor>0.1</factor>
+    <step>1</step>
+    <axis>
+        <x>0</x>
+        <y>-1</y>
+        <z>0</z>
+    </axis>
+</animation>
+
+<animation>
+    <type>textranslate</type>
+    <object-name>RHn2.1</object-name>
+    <property>engines/engine[1]/turbine</property>
+    <factor>0.001</factor>
+    <step>100</step>
+    <axis>
+        <x>0</x>
+        <y>-1</y>
+        <z>0</z>
+    </axis>
+</animation>
+
+<animation>
+    <type>textranslate</type>
+    <object-name>RHn2.2</object-name>
+    <property>engines/engine[1]/turbine</property>
+    <factor>0.01</factor>
+    <step>10</step>
+    <axis>
+        <x>0</x>
+        <y>-1</y>
+        <z>0</z>
+    </axis>
+</animation>
+
+<animation>
+    <type>textranslate</type>
+    <object-name>RHn2.3</object-name>
+    <property>engines/engine[1]/turbine</property>
+    <factor>0.1</factor>
+    <step>1</step>
+    <axis>
+        <x>0</x>
+        <y>-1</y>
+        <z>0</z>
+    </axis>
+</animation>
+
+
+
+
+
+
+
+</PropertyList>
