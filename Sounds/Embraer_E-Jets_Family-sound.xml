@@ -211,7 +211,7 @@
 
     <squeal1>
         <name>front wheel squeal</name>
-        <path>/Aircraft/777-200/Sounds/touchdown.wav</path>
+        <path>Aircraft/777-200/Sounds/touchdown.wav</path>
         <condition>
             <property>/gear/gear[0]/wow</property>
         </condition>
@@ -243,7 +243,7 @@
 
     <squeal2>
         <name>right wheel squeal</name>
-        <path>/Aircraft/777-200/Sounds/touchdown.wav</path>
+        <path>Aircraft/777-200/Sounds/touchdown.wav</path>
         <condition>
             <or>
                 <property>/gear/gear[1]/wow</property>
@@ -281,7 +281,7 @@
 
     <squeal3>
         <name>left wheel squeal</name>
-        <path>/Aircraft/777-200/Sounds/touchdown.wav</path>
+        <path>Aircraft/777-200/Sounds/touchdown.wav</path>
         <condition>
             <or>
                 <property>/gear/gear[2]/wow</property>
@@ -370,7 +370,7 @@
     <stall>
         <name>stall</name>
         <mode>looped</mode>
-        <path>/Aircraft/777-200/Sounds/stall.wav</path>
+        <path>Aircraft/777-200/Sounds/stall.wav</path>
         <condition>
             <property>instrumentation/weu/sound/stall-horn</property>
         </condition>
